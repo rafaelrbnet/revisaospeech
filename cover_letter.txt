@@ -1,0 +1,78 @@
+Dear Editor-in-Chief,
+
+We are pleased to submit the manuscript entitled "Speech Analytics and Natural
+Language Processing Applied to Clinical Communication: A Scoping Review" for
+consideration for publication in the International Journal of Medical
+Informatics as a Review article.
+
+SCOPE AND CONTRIBUTION
+
+Clinical communication — particularly the anamnesis encounter — constitutes
+one of the richest yet least analytically exploited data sources in healthcare.
+Recent advances in Automatic Speech Recognition (ASR), Natural Language
+Processing (NLP) and vocal biomarker analysis have expanded the technical
+capacity to extract structured information from spoken clinical interactions.
+Despite this progress, few studies operationalise the clinical interaction
+itself as a source of speech-derived measurable variables, particularly
+communicational and behavioural markers that can inform adherence monitoring
+and care quality assessment.
+
+This scoping review systematically maps the evidence on Speech Analytics and
+NLP applied to clinical communication (2014–2026), following PRISMA-ScR
+guidelines (Tricco et al., 2018) and JBI methodology (Peters et al., 2020).
+The corpus of 24 included studies — drawn from PubMed/MEDLINE and supplemented
+by backward snowballing — was organised into four thematic axes: (A) clinical
+NLP and biomedical entity extraction; (B) automated clinical documentation and
+ASR; (C) physician-patient communication; and (D) vocal biomarkers and
+multimodal analysis. The review confirms a consistent gap between the
+documented technical capabilities and the operationalisation of the anamnesis
+as a structured analytical unit, and proposes a research agenda for prospective
+studies integrating Speech Analytics with structured clinical communication
+analysis.
+
+WHY IJMI
+
+The International Journal of Medical Informatics is the primary venue for
+this work: the four thematic axes span NLP-based clinical information
+extraction, ASR-driven documentation systems, and computational approaches
+to clinical communication — all central to IJMI's scope. The confirmed gap
+identified (clinical interactions rarely operationalised as speech-derived
+variables) maps directly onto the journal's longstanding interest in the
+clinical translational challenges of health data science.
+
+DECLARATIONS
+
+This manuscript has not been published previously and is not under
+consideration for publication elsewhere. All authors have approved the final
+version and agreed to its submission.
+
+This study is a scoping review based exclusively on published scientific
+literature; no primary data were collected and no ethical approval was
+required (CNS Resolution No. 510/2016).
+
+Article processing charges (APC) are covered under the Open Access Read &
+Publish Agreement between CAPES (Coordenação de Aperfeiçoamento de Pessoal de
+Nível Superior, Brazil) and Elsevier for the period 2026–2028. The
+corresponding author's institutional affiliation (Universidade São Francisco,
+Bragança Paulista, SP, Brazil) is eligible under this agreement.
+
+Supplementary materials submitted with this manuscript:
+  S1 — Complete electronic search strings by database (PubMed/MEDLINE)
+  S2 — Standardised data extraction form (CSV)
+
+CORRESPONDING AUTHOR
+
+Rafael Baena Neto
+Graduate Program in Health Data Science
+Universidade São Francisco (USF)
+Rua Alexandre Rodrigues Barbosa, 45
+Bragança Paulista, SP 12916-900, Brazil
+rafael.baena@mail.usf.edu.br
+ORCID: 0009-0005-2122-4665
+
+We thank the editorial team for their time and consideration.
+
+Sincerely,
+
+Rafael Baena Neto
+on behalf of all co-authors
