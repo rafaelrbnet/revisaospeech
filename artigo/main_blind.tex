@@ -1,0 +1,962 @@
+%%
+%% Speech Analytics and Natural Language Processing Applied to
+%% Clinical Communication: A Scoping Review
+%%
+%% [Author identifiers removed for double-blind peer review]
+%%
+%% Target journal: International Journal of Medical Informatics (IJMI)
+%% Class: cas-sc.cls v2.4 (single-column — for submission/review)
+%%
+
+\documentclass[a4paper,fleqn]{cas-sc}
+
+\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareSymbolFont{CMSYfix}{OMS}{cmsy}{m}{n}
+\DeclareMathSymbol{\approx}{\mathrel}{CMSYfix}{"19}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+%% ================================================================
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+%% ----------------------------------------------------------------
+%% Running head
+%% ----------------------------------------------------------------
+\shorttitle{Speech Analytics in Clinical Communication}
+\shortauthors{[Authors removed for review]}
+
+%% ----------------------------------------------------------------
+%% Title
+%% ----------------------------------------------------------------
+\title[mode=title]{Speech Analytics and Natural Language Processing
+Applied to Clinical Communication: A Scoping Review}
+
+%% ----------------------------------------------------------------
+%% Authors — identifiers removed for double-blind review
+%% ----------------------------------------------------------------
+\author[1]{Author 1}
+\cormark[1]
+\fnmark[1]
+
+\affiliation[1]{%
+  organization={[Institution 1 removed for review]},
+  country={Brazil}
+}
+
+\author[1]{Author 2}
+\fnmark[2]
+
+\author[2]{Author 3}
+\fnmark[3]
+
+\affiliation[2]{%
+  organization={[Institution 2 removed for review]},
+  country={Brazil}
+}
+
+\author[2]{Author 4}
+\fnmark[4]
+
+\author[2]{Author 5}
+\fnmark[5]
+
+\cortext[1]{Corresponding author}
+\fntext[1]{[Role and affiliation removed for review]}
+\fntext[2]{[Role and affiliation removed for review]}
+\fntext[3]{[Role and affiliation removed for review]}
+\fntext[4]{[Role and affiliation removed for review]}
+\fntext[5]{[Role and affiliation removed for review]}
+
+%% ----------------------------------------------------------------
+%% Abstract — maximum 250 words (IJMI)
+%% ----------------------------------------------------------------
+\begin{abstract}
+\textbf{Background:}
+Professional-patient communication constitutes a dense source of clinical
+information that remains predominantly unstructured and analytically
+underutilised. Recent advances in Automatic Speech Recognition (ASR),
+Natural Language Processing (NLP) and vocal biomarker analysis have expanded
+the capacity to extract structured data from clinical interactions during
+anamnesis. Nevertheless, few studies operationalise these interactions as
+measurable variables derived from speech, particularly with regard to
+communicational and behavioural markers that can be used for data analysis
+and outcome assessment in patient care.
+
+\textbf{Objective:}
+To identify, synthesise and critically evaluate the evidence on the application
+of \textit{Speech Analytics} and NLP to professional-patient clinical
+communication, mapping methodological approaches, identified markers, technical
+challenges and gaps for future research.
+
+\textbf{Methods:}
+Scoping review following the PRISMA-ScR guidelines \citep{Tricco2018}
+and JBI \citep{Peters2020}. The search was concentrated on the primary
+database PubMed/MEDLINE (filters: 2014-present, English/Spanish, free full
+text) and supplemented by manual \textit{snowballing}. The final corpus
+comprises 24~articles selected from 786~records in the primary electronic
+search (after removing 27 duplicates) and 7 studies added manually by active
+search, organised into four thematic axes: (A)~Clinical NLP and biomedical
+entity extraction; (B)~automated clinical documentation and ASR;
+(C)~physician-patient communication; (D)~vocal biomarkers and multimodal
+analysis.
+
+\textbf{Results:}
+Studies evidence consolidated advances in clinical NLP (\textit{transformer}-based
+models, BERT leads Named Entity Recognition) and automated transcription
+(WER $\approx$9\% achievable with Whisper/PyAnnote). Patient-centred
+communication demonstrates measurable impact on objective health outcomes.
+Communicational markers -- self-repair, engagement, emotional support and
+barrier indicators -- are identified as adherence predictors. Multimodal
+analysis (acoustic\,+\,semantic) remains in an early stage; most approaches
+focus on documentation automation, neglecting clinical interaction as an
+object of analysis in its own right.
+
+\textbf{Conclusions:}
+A consistent gap is confirmed: few studies operationalise clinical interactions
+as measurable variables derived from speech, particularly communicational
+and behavioural markers extracted from the anamnesis. This review grounds the
+need for studies integrating \textit{Speech Analytics} with structured analysis
+of clinical communication as a data source for adherence monitoring and quality
+of care.
+
+\end{abstract}
+
+%% ----------------------------------------------------------------
+%% Research Highlights — REQUIRED in IJMI (3 items, max. 85 characters)
+%% ----------------------------------------------------------------
+\begin{highlights}
+\item BERT models lead clinical NER; WER $\approx$9\% achievable with
+      Whisper/PyAnnote pipelines
+\item Communication markers (self-repair, engagement, barriers)
+      predict therapeutic adherence
+\item Confirmed gap: clinical interactions rarely operationalised
+      as speech-derived variables
+\end{highlights}
+
+%% ----------------------------------------------------------------
+%% Keywords
+%% ----------------------------------------------------------------
+\begin{keywords}
+Speech analytics \sep
+Natural language processing \sep
+Clinical communication \sep
+Automatic speech recognition \sep
+Communication markers \sep
+Digital scribe
+\end{keywords}
+
+\maketitle
+
+%% ================================================================
+\section{Introduction}
+\label{sec:intro}
+
+Clinical communication is one of the richest and least explored data sources
+in healthcare. In public health systems, anamnesis sessions and therapeutic
+guidance -- verbal interactions with a propedeutic structure defined
+by clinical semiology \citep{Porto2019} -- occur predominantly
+as analytically unstructured exchanges, rarely converted into measurable
+data \citep{Wang2018,Koleck2019}.
+
+The quality of the professional-patient interaction has a measurable impact
+on adherence and objective clinical outcomes \citep{Kelley2014}. Communication
+barriers -- including health literacy gaps, misaligned expectations and
+miscommunication patterns -- are associated with low therapeutic adherence
+and worse prognosis \citep{McCabe2018,Alkhamees2023}.
+
+\textit{Speech Analytics} -- the computational analysis of spoken language --
+offers a pathway to extract structured and measurable indicators from these
+interactions. Recent advances in ASR, particularly transformer-based models
+such as Whisper \citep{Radford2023}, combined with instruction-tuned large
+language models (LLMs), have lowered the barriers for deploying end-to-end
+NLP \textit{pipelines} in healthcare \citep{Klusty2025}. Nevertheless, most
+existing approaches target diagnostic support or documentation automation,
+without treating the clinical interaction itself as an object of structured
+analysis \citep{vanBuchem2021}. The development of a \textit{Speech Analytics}
+protocol for monitoring orthopedic rehabilitation in a public health system
+[Author et al., 2026] exemplifies the translational potential of these
+technologies and underscores the need for a consolidated evidence map to
+support the design of prospective studies.
+
+Recent reviews have addressed aspects partially overlapping with this scope.
+\citet{Falcetta2023} identified the absence of prospective validation in
+automated documentation systems for clinical interactions. \citet{Ng2025}
+evaluated the technical performance of ASR systems for clinical documentation,
+reporting WER values between 8.7\% and over 50\% depending on the context.
+\citet{Alabbad2026} mapped ASR applications in healthcare in the post-LLM
+era. \citet{Albert2024} conducted a scoping review on AI, speech and NLP
+methods for clinician-patient communication assessment. None of these reviews,
+however, focuses on the operationalisation of the clinical interaction as a
+set of \textbf{speech-derived measurable variables} -- particularly
+communicational and behavioural markers (self-repair, engagement, barriers,
+health literacy) -- as an object of analysis in its own right, independent of
+documentation or diagnosis. It is precisely this gap that the present review
+aims to map.
+
+This scoping review aims to map the evidence on \textit{Speech Analytics}
+and NLP applied to clinical communication, characterising the methodological
+landscape and identifying gaps for future research.
+
+%% ================================================================
+\section{Methods}
+\label{sec:metodos}
+
+\subsection{Study design}
+
+This scoping review follows the methodological framework proposed by
+\citet{Arksey2005}, refined by \citet{Levac2010} and the Joanna Briggs
+Institute (JBI) \citep{Peters2020}. Conduct and reporting follow the
+PRISMA-ScR guidelines (\textit{Preferred Reporting Items for Systematic
+Reviews and Meta-Analyses} extension for Scoping Reviews) \citep{Tricco2018}.
+
+\subsection{Research questions}
+
+\begin{itemize}
+  \item \textbf{Q1:} Which \textit{Speech Analytics} approaches have been
+        applied to clinical communication over the past five years?
+  \item \textbf{Q2:} Which NLP and ASR methods are used for automated
+        transcription and analysis of clinical consultations?
+  \item \textbf{Q3:} Which communicational and behavioural markers have been
+        identified or proposed in the professional-patient interaction?
+  \item \textbf{Q4:} What are the technical, ethical and methodological
+        challenges for automated analysis of clinical communication?
+\end{itemize}
+
+\subsection{Eligibility criteria}
+
+\subsubsection{Inclusion criteria}
+\begin{itemize}
+  \item \textbf{IC1:} The study applies \textit{Speech Analytics}, NLP or ASR
+        technologies for clinical transcription and extraction of unstructured
+        medical data, or analyses and measures the foundations of
+        professional-patient communication.
+  \item \textbf{IC2:} The study focuses on free-text EHR interactions, spoken
+        clinical dialogues (consultations), automated documentation generation
+        (digital scribes/SOAP notes) or theoretical frameworks of shared
+        decision-making.
+  \item \textbf{IC3:} Full-text availability in English, Portuguese or Spanish;
+        published between January 2014 and 2026.
+  \item \textbf{IC4:} Presents original development, empirical feasibility
+        testing, algorithm validation, or constitutes a prior systematic or
+        scoping review on the topic.
+\end{itemize}
+
+\subsubsection{Exclusion criteria}
+\begin{itemize}
+  \item \textbf{EC1:} Studies that do not address NLP, ASR or audio analysis
+        of clinical interactions.
+  \item \textbf{EC2:} Studies describing transcription or extraction systems
+        without analysing interaction quality or impact on the
+        professional-patient relationship.
+  \item \textbf{EC3:} Exclusive focus on voice-based diagnosis of physical or
+        psychiatric conditions without analysis of dialogic interaction.
+  \item \textbf{EC4:} Opinion pieces, commentaries, editorials, conference
+        abstracts or books.
+  \item \textbf{EC5:} Full text unavailable without payment or inaccessible
+        through institutional channels.
+  \item \textbf{EC6:} Studies that do not describe data collection, processing
+        methodology or technical validation.
+  \item \textbf{EC7:} Studies addressing exclusively non-clinical interactions
+        or simulated contexts without demonstrated practical transferability.
+\end{itemize}
+
+\subsection{Information sources and search strategy}
+
+The literature search was conducted independently by three different
+researchers, each using multiple search strategies to cover the thematic
+axes of the review. The primary database used was PubMed/MEDLINE. The
+following search filters were applied: publication period from January 2014
+to the present (2026), articles published in English and Spanish, and
+availability of free full text.
+
+Each researcher used more than one search string. The specific strings used
+were as follows:
+
+\begin{enumerate}
+  \item \textbf{String 1 (NLP, Symptoms and EHR):}
+        \begin{verbatim}
+("natural language processing"[Title/Abstract])
+AND
+(symptoms[Title/Abstract] OR "patient-reported symptoms"[Title/Abstract])
+AND
+("electronic health records"[Title/Abstract] OR "patient-centered"[Title/Abstract])
+        \end{verbatim}
+
+  \item \textbf{String 2 (Clinical Information Extraction and NER):}
+        \begin{verbatim}
+("clinical information extraction"[Title/Abstract]
+OR "medical information extraction"[Title/Abstract]
+OR "named entity recognition"[Title/Abstract])
+AND
+("medical free text"[Title/Abstract]
+OR "review"[Title/Abstract]
+OR "patient-generated health data"[Title/Abstract])
+        \end{verbatim}
+
+  \item \textbf{String 3 (Clinician-Patient Communication and Outcomes):}
+        \begin{verbatim}
+("patient-physician communication"[Title/Abstract]
+OR "doctor-patient communication"[Title/Abstract]
+OR "patient-clinician relationship"[Title/Abstract])
+AND
+("intercultural settings"[Title/Abstract]
+OR miscommunication[Title/Abstract]
+OR "healthcare outcomes"[Title/Abstract]
+OR "shared decision-making"[Title/Abstract]
+OR "communication quality scale"[Title/Abstract])
+        \end{verbatim}
+
+  \item \textbf{String 4 (Vocal Biomarkers and Speech Analytics):}
+        \begin{verbatim}
+("vocal biomarkers"[Title/Abstract] OR "speech analytics"[Title/Abstract])
+AND
+("clinical practice"[Title/Abstract]
+OR "voice for health"[Title/Abstract]
+OR "SUS"[Title/Abstract])
+        \end{verbatim}
+
+  \item \textbf{String 5 (NLP, Speech and Reviews):}
+        \begin{verbatim}
+(("Applying natural language processing"[Title/Abstract])
+  AND ("Systematic review"[Title/Abstract]))
+OR
+(("Identifying Topics"[Title/Abstract])
+  AND ("Natural Language Processing Methods"[Title/Abstract]))
+OR
+(("Automatic speech recognition"[Title/Abstract])
+  AND ("patient-clinician conversations"[Title/Abstract]))
+        \end{verbatim}
+\end{enumerate}
+
+Additionally, a comprehensive search was conducted using the following
+unified general string:
+
+\begin{verbatim}
+("speech analytics" OR "speech analysis" OR "speech recognition"
+OR "automatic speech recognition" OR ASR OR "digital scribe"
+OR "clinical transcription" OR "clinical documentation" OR "vocal biomarkers"
+OR "healthcare conversations" OR "doctor-patient conversations"
+OR "patient-doctor conversations")
+AND
+("natural language processing" OR NLP OR "large language model" OR LLM
+OR "information extraction" OR "clinical information extraction"
+OR "named entity recognition" OR NER OR "relation extraction" OR "text mining"
+OR "conversation analysis" OR "topic modeling" OR "SOAP note" OR "SOAP notes")
+AND
+(healthcare OR clinical OR medicine OR medical OR physician OR clinician
+OR doctor OR patient OR "electronic health record" OR EHR OR hospital
+OR outpatient)
+\end{verbatim}
+
+To mitigate the loss of relevant articles and qualitatively enrich the corpus,
+the electronic search was supplemented by the \textit{snowballing} method
+(manual reference tracking or \textit{backward snowballing}). From the
+systematic reviews and foundational articles located in the primary search,
+their reference lists were manually analysed to identify and include other
+studies that strictly meet the defined eligibility criteria, ensuring coverage
+of key works of methodological or conceptual relevance to this review.
+
+\subsection{Study selection}
+
+Records retrieved from the primary PubMed/MEDLINE search were imported into
+Rayyan \citep{Ouzzani2016} for deduplication and screening. Titles and
+abstracts were screened independently by two reviewers, with agreement
+assessed using Cohen's kappa coefficient ($\kappa = 0.78$). Disagreements
+were resolved by a third reviewer or by the corresponding author. Full texts
+of potentially eligible records were then retrieved and assessed against the
+eligibility criteria. The selection process is documented in the PRISMA-ScR
+flowchart (Fig.~\ref{fig:prisma}).
+
+\subsection{Data extraction}
+
+Data were extracted using a standardised form containing: author(s), year,
+country, study design, clinical context, population characteristics,
+technology used (ASR model, NLP framework, LLM), extracted clinical variables,
+reported outcomes, ethical framework and limitations.
+
+\subsection{Synthesis}
+
+A narrative synthesis was performed. Findings are organised around the four
+thematic axes defined in the eligibility criteria:
+(A)~Clinical NLP and biomedical entity extraction;
+(B)~automated clinical documentation and ASR;
+(C)~physician-patient communication; and
+(D)~vocal biomarkers and multimodal analysis.
+
+%% ================================================================
+\section{Results}
+\label{sec:resultados}
+
+% ---------------------------------------------------------------
+\subsection{Study selection}
+% ---------------------------------------------------------------
+
+Searches in the primary database (PubMed/MEDLINE) retrieved 786~records.
+After removing 27~duplicates, 759~records were screened by title and abstract,
+resulting in 35~articles selected for full-text assessment. Of these,
+17~were excluded for not meeting the eligibility criteria: 8~for not addressing
+NLP, ASR or audio analysis of clinical interactions (EC1), 5~for describing
+transcription or extraction systems without analysing the quality of the
+professional-patient interaction (EC2), and 4~for consisting of opinion pieces,
+editorials or normative documents without empirical data (EC4). The 7~articles
+identified by \textit{snowballing} (backward reference tracking of included
+systematic reviews) were subjected to the same eligibility assessment
+independently of the electronic records; all met the inclusion criteria and
+none was excluded. In total, 24~articles were included in the synthesis
+(17~from the electronic search + 7~from \textit{snowballing}). The PRISMA-ScR
+flowchart is presented in Fig.~\ref{fig:prisma}.
+
+\begin{figure}[h]
+  \centering
+  \resizebox{\linewidth}{!}{\input{prisma_flow}}
+  \caption{PRISMA-ScR flowchart of the study selection process.}
+  \label{fig:prisma}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Characteristics of included studies}
+% ---------------------------------------------------------------
+
+The 24~studies in the corpus span the period 2014--2025
+(Table~\ref{tab:estudos}).
+
+\begin{longtable}{p{0.65cm} p{2.4cm} p{1.55cm} p{0.55cm} p{2.2cm} p{2.35cm} p{1.4cm}}
+\caption{Characteristics of studies included in the synthesis.}
+\label{tab:estudos}\\
+\toprule
+\textbf{Code} & \textbf{Author, year} & \textbf{Type} &
+\textbf{Axis} & \textbf{Technology} & \textbf{Main outcome} & \textbf{Country} \\
+\midrule
+\endfirsthead
+\multicolumn{7}{l}{\small\textit{(continued)}}\\
+\toprule
+\textbf{Code} & \textbf{Author, year} & \textbf{Type} &
+\textbf{Axis} & \textbf{Technology} & \textbf{Main outcome} & \textbf{Country} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+%% ---- Axis A: Clinical NLP and biomedical entity extraction ----
+S01 & Bazoge et al., 2023    & Syst.\ rev.  & A & Transformers, BERT         & NER in CDWs; phenotyping               & France        \\
+S02 & Navarro et al., 2023   & Syst.\ rev.  & A & BERT, BioBERT              & Clinical NER (problems, treatments)    & Australia     \\
+S03 & Watabe et al., 2025    & Empirical    & A & BERT-CRF                   & F1\,>\,0.8; reported symptoms          & Japan         \\
+S04 & Sezgin et al., 2023    & Empirical    & A & NER + SNOMED CT (zero-shot) & Symptom identification in PGHD        & USA           \\
+S05 & Koleck et al., 2019    & Syst.\ rev.  & A & NLP, classifiers           & Symptom extraction from EHR            & USA           \\
+S06 & Wang et al., 2018      & Lit.\ rev.   & A & cTAKES, MedLEE, ML         & 263 clinical extraction systems        & USA           \\
+%% ---- Axis B: Automated clinical documentation and ASR ----
+S07 & Krishna et al., 2021   & Preprint\textsuperscript{‡} & B & CLUSTER2SENT    & SOAP notes generated from consultations & USA          \\
+S08 & Klusty et al., 2025    & Empirical    & B & Whisper + PyAnnote         & On-premise transcription; privacy      & USA           \\
+S09 & Abbasian et al., 2024  & Framework    & B & Generative AI, RAG         & Groundedness, safety, empathy          & USA           \\
+S10 & Aleksić et al., 2017  & Empirical & B & EHR summarisation & Dashboard for chronic disease & Serbia  \\
+S11 & Tran et al., 2023      & Empirical    & B & General vs.\ specialist ASR & WER; errors in short pronouns         & USA           \\
+S12 & Schloss \& Konam, 2020 & Preprint\textsuperscript{‡} & B & Hierarchical Bi-LSTM & Utterance classification → SOAP  & USA          \\
+S13 & van Buchem et al., 2021 & Scoping rev. & B & Digital scribes (review) & Usability gaps in real clinical use   & Netherlands   \\
+S14 & Falcetta et al., 2023  & Syst.\ rev.  & B & Scribes (review)           & Mapping of 22 scribes; no prospective validation & Brazil \\
+S15 & Ng et al., 2025        & Syst.\ rev.  & B & Clinical ASR (review)      & WER ranged from 8.7\% to $>$50\% by context & Singapore \\
+%% ---- Axis C: Physician-patient communication ----
+S16 & Shao et al., 2025      & Empirical    & C & DPCQ scale (14 items)      & Physician-patient communication quality & China       \\
+S17 & Muscat et al., 2020    & Framework    & C & Shared decision-making     & Health literacy; engagement            & Australia   \\
+S18 & Kelley et al., 2014    & Meta-analysis & C & --                        & Clinical relationship → objective outcomes & USA     \\
+S19 & Rucinski et al., 2022  & Syst.\ rev.  & C & Adherence metrics          & Bilateral adherence in orthopedics     & USA           \\
+S20 & McCabe \& Healey, 2018 & Empirical    & C & Conversation analysis      & Self-repair as adherence predictor     & UK            \\
+S21 & Alkhamees \& Alasqah, 2023 & Integr.\ rev. & C & --               & Intercultural barriers in communication & Saudi A.    \\
+%% ---- Axis D: Vocal biomarkers and multimodal analysis ----
+S22 & Fagherazzi et al., 2021 & Framework   & D & Vocal pipeline (acoustics+NLP) & Vocal biomarkers of health and emotion & Luxembourg \\
+S23 & Albert et al., 2024    & Scoping rev.\textsuperscript{‡} & D & AI, Speech, NLP & Clinician-patient communication via AI & France  \\
+S24 & Imel et al., 2022      & Report       & D & Sequential neural networks & Emotional valence; human rater agreement & USA         \\
+\midrule
+\multicolumn{7}{l}{\footnotesize\parbox{13.5cm}{%
+  \textsuperscript{‡}Preprint/not peer-reviewed (arXiv/medRxiv) --- included as they meet IC1--IC4; preprint acceptance per Elsevier/IJMI policy.}} \\
+\end{longtable}
+
+% ---------------------------------------------------------------
+\subsection{Axis A —Clinical NLP and biomedical entity extraction}
+\label{subsec:eixoA}
+% ---------------------------------------------------------------
+
+The studies in Axis~A map the evolution of NLP approaches applied to clinical
+information extraction, documenting the transition from rule-based systems to
+deep learning architectures and \textit{transformer} models.
+
+The historical landscape of the field is described by \citet{Wang2018}, whose
+review of 263~studies evidences the predominance of symbolic systems such as
+cTAKES and MedLEE in the processing of electronic health records. The authors
+demonstrate how adherence to linguistically rule-based approaches was the norm
+until the arrival of machine learning techniques. The consolidation of the
+transition to deep learning models is documented by \citet{Bazoge2023}, in a
+systematic review on the use of NLP in clinical data warehouses (CDWs): the
+authors evidence the migration from symbolic methods to \textit{transformers},
+identifying their applicability in phenotyping and symptom management tasks
+from secondary data.
+
+In the specific domain of biomedical Named Entity Recognition (NER),
+\citet{Navarro2023} systematically reviewed the literature on NER and relation
+extraction in free-text medical records and concluded that models such as BERT
+lead in extracting the categories of ``problems'' and ``treatments''. The
+authors point out, however, the scarcity of implementations in real clinical
+settings as a persistent limitation of the field.
+
+The ability of \textit{transformer} models to capture patient colloquial
+language was demonstrated by \citet{Watabe2025}, who developed and validated a
+BERT-CRF model for extracting symptoms reported in everyday language, achieving
+an F1-score above~0.8. The study highlights the need for \textit{fine-tuning}
+with authentic narrative data to capture slang and linguistic nuances present
+in patient speech. Complementarily, \citet{Sezgin2023} demonstrated the
+feasibility of a \textit{zero-shot} approach combining NER and the SNOMED~CT
+ontology to identify symptoms in patient-generated health data (PGHD), without
+specific retraining, validating the possibility of pre-trained models
+translating lay language into structured clinical metrics.
+
+At the intersection of NLP and electronic health records, \citet{Koleck2019}
+synthesised the efficacy of classification algorithms for extracting subjective
+symptoms -- such as pain and mood changes -- from free-text EHR narratives,
+evidencing the technical feasibility of automated extraction even for
+subjective dimensions.
+
+Taken together, the studies in Axis~A confirm the technical maturity of
+clinical NLP for biomedical entity extraction, with BERT and its variants
+established as the state of the art. The cross-cutting gap identified --
+highlighted by \citet{Navarro2023} -- is the distance between performance in
+laboratory settings and deployment in real clinical systems, where data
+privacy, linguistic variability and integration with care workflows remain
+unsolved challenges.
+
+% ---------------------------------------------------------------
+\subsection{Axis B —Automated clinical documentation and ASR}
+\label{subsec:eixoB}
+% ---------------------------------------------------------------
+
+The studies in Axis~B cover the full cycle of automated clinical
+documentation: from speech recognition to the generation of structured
+records, including the technical challenges and ethical requirements for
+hospital deployment.
+
+The foundations of automated documentation are established by
+\citet{Aleksic2017}, whose electronic health record summarisation model
+demonstrates the feasibility of dashboards capable of identifying patients
+requiring specialist attention, validating readable synthesis as a strategy
+to reduce clinician cognitive load.
+
+In the specific domain of SOAP note generation, two studies address
+complementary strategies. \citet{Schloss2020} used hierarchical Bi-LSTM
+networks to classify consultation utterances into SOAP sections with high
+accuracy, proposing modular strategies to handle data ``noise'' in automatic
+transcriptions. \citet{Krishna2021}, in turn, proposed the CLUSTER2SENT
+model, based on modular summarisation, to generate structured notes from
+dense physician-patient conversations, facilitating the retrieval of verbal
+evidence by the clinician in the analytical output.
+
+With regard to automatic transcription, \citet{Klusty2025} described a system
+based on OpenAI Whisper and PyAnnote operating on closed (\textit{on-premise})
+servers, simultaneously resolving the speaker diarisation challenge and the
+privacy requirements for hospital deployment. Complementarily,
+\citet{Tran2023} demonstrated that errors in short pronouns (such as
+\enquote{I} and \enquote{you}) are more critical for the validity of clinical
+indicators than errors in complex medical terms, highlighting the need for
+accuracy in casual language to ensure the quality of extracted data.
+
+Generative AI-based approaches bring a distinct set of metric requirements.
+\citet{Abbasian2024} propose safety, factual validity
+(\textit{groundedness}) and empathy metrics as mandatory indicators for
+evaluating health conversations generated by language models, grounding the
+introduction of Retrieval-Augmented Generation (RAG) as a mechanism to anchor
+model responses in facts extracted from the consultation and mitigate
+algorithmic hallucinations.
+
+The state of the field is synthesised by \citet{vanBuchem2021}, in a scoping
+review on the deployment of digital scribes in clinical practice: the authors
+point to the absence of prospective usability and real clinical utility studies
+as the central gap in the field, with most initiatives still limited to
+proof-of-concept without prospective clinical validation.
+
+Taken together, the studies in Axis~B reveal a field in rapid technical
+evolution (with ASR, diarisation and SOAP note generation \textit{pipelines}
+progressively more robust), but with prospective clinical validation still
+scarce \citep{vanBuchem2021}. Most approaches direct processing towards
+documentation automation, subordinating the analysis of clinical interaction
+quality to the production of the structured record.
+
+% ---------------------------------------------------------------
+\subsection{Axis C —Physician-patient communication}
+\label{subsec:eixoC}
+% ---------------------------------------------------------------
+
+The studies in Axis~C establish the empirical basis for professional-patient
+communication quality as a determinant of clinical outcomes, identifying the
+measurable dimensions of the therapeutic interaction and the barriers that
+compromise its effectiveness.
+
+The impact of the clinician-patient relationship on objective health outcomes
+is demonstrated by the meta-analysis of \citet{Kelley2014}, which confirms
+the significant effect of the emotional and cognitive dimensions of
+communication on measurable clinical results, providing the theoretical
+foundation for investing in automatic quality metrics of the therapeutic
+relationship.
+
+In the domain of structured measurement, \citet{Shao2025} developed and
+validated the 14-item DPCQ (\textit{Doctor-Patient Communication Quality})
+scale, focused on emotional support and health education. The semantic
+categories proposed by the authors (emotional interaction versus behavioural
+guidance) are directly applicable as targets for speech-derived automatic
+metrics.
+
+The dimension of therapeutic adherence in the orthopedic context is addressed
+by \citet{Rucinski2022}, whose systematic review demonstrates that current
+metrics fail by ignoring the barriers imposed by the healthcare team and the
+system, not only by the patient. The authors argue for the creation of
+auditable data capable of mapping bilateral failures in orthopedic
+rehabilitation, an argument that reinforces the need for instruments to
+analyse the interaction, not just the isolated behaviour of the patient.
+
+At the microscopic level of speech, \citet{McCabe2018} demonstrated that the
+use of \enquote{self-repair} by physicians (i.e., the spontaneous correction
+of utterances during the consultation) predicts superior treatment adherence.
+The finding validates the analysis of low-level linguistic dynamics as
+predictors of clinical outcomes, demonstrating that automatically identifiable
+communicational markers can carry prognostic value.
+
+The role of health literacy in effective communication is analysed by
+\citet{Muscat2020}, who demonstrate that shared decision-making requires the
+active building of patient skills through effective verbal instruction, in
+contrast with the passive informational model. Speech monitoring in the
+clinical context must therefore capture indicators of communicational literacy
+success, not merely unilateral information transfer.
+
+Linguistic and cultural diversity contexts introduce an additional layer of
+complexity. \citet{Alkhamees2023} mapped how linguistic disparities and
+authoritarian consultation styles generate patient inhibition and compromise
+the quality of clinical decisions. In the diverse context of SUS (Brazil's
+National Health System), these barriers often remain invisible to managers,
+but are potentially identifiable through automated interaction analysis.
+
+The clinical propedeutics systematised by \citet{Porto2019} organises the
+anamnesis as a structured sequence of inquiry elements, defining the
+propedeutic characteristics of the complaint -- location, intensity, quality,
+radiation, triggering and relieving factors, duration and evolution -- as
+mandatory semantic targets of diagnostic reasoning. This structure constitutes
+the clinical grammar of verbal interaction: the set of information that the
+clinician must elicit and the patient must verbalise for the anamnesis to
+fulfil its diagnostic function. None of the studies in this review's corpus
+crosses the propedeutic model with automatic analysis of verbal interaction:
+the studies in Axis~C measure communication quality in its relational and
+cognitive dimensions, but do not verify whether the propedeutic characteristics
+were effectively verbalised, understood and recorded during the consultation.
+
+Taken together, the studies in Axis~C provide the map of what must be measured
+in clinical interaction: emotional and cognitive dimensions
+\citep{Kelley2014,Shao2025}, linguistic adherence markers
+\citep{McCabe2018,Rucinski2022}, health literacy competencies
+\citep{Muscat2020} and intercultural barriers \citep{Alkhamees2023}. The
+emerging gap is twofold: no study operationalises these dimensions as
+automatically speech-derived variables (technological gap), and no study
+verifies whether the propedeutic characteristics of the anamnesis
+\citep{Porto2019} were elicited with adequate communicational quality during
+real interaction (clinical-methodological gap). Measurement remains dependent
+on self-report scales or direct observation, without integration with
+acoustic-semantic analysis \textit{pipelines} guided by the clinical structure
+of the anamnesis.
+
+% ---------------------------------------------------------------
+\subsection{Axis D —Vocal biomarkers and multimodal analysis}
+\label{subsec:eixoD}
+% ---------------------------------------------------------------
+
+The studies in Axis~D explore the acoustic and prosodic dimension of clinical
+communication, extending the analysis beyond the semantic content of the
+transcribed text to the vocal signals that accompany speech.
+
+\citet{Fagherazzi2021} describe the \textit{pipeline} for capturing linguistic
+and acoustic features -- prosody, vocal quality and rhythm -- that indicate
+health states and emotional states of the speaker. The authors demonstrate
+that signals derived directly from the voice can function as clinical
+biomarkers, grounding the idea that the speech of both patient and clinician,
+beyond its semantic content, carries usable analytical information
+independently of textual transcription.
+
+In the domain of real clinical consultation analysis, \citet{Imel2022} mapped
+emotional valences from textual transcripts of physician-patient dialogues
+using sequential neural networks, achieving agreement with trained human
+raters. Although the study demonstrates that emotional valence markers of
+verbal interaction can be automatically identified at utterance level with
+reliability comparable to human assessment (correlation of 0.60), the authors
+note that the model was trained and evaluated exclusively on the textual
+content of the dialogues (transcription diaries), without directly processing
+the audio signal or the acoustic layer.
+
+The unresolved frontier of Axis~D is identified by \citet{Albert2024}, in a
+scoping review on AI, speech and NLP methods for clinician-patient
+communication assessment: the authors highlight the scarcity of studies on
+non-verbal language, voice tones and silences. Most existing approaches focus
+on transcription and semantic analysis, neglecting the acoustic-prosodic layer
+as an independent object of analysis. Silences, pauses and voice modulations --
+therapeutic and relational components of the anamnesis -- remain without a
+consolidated method for automatic extraction and interpretation.
+
+Taken together, the studies in Axis~D reveal a field in an early stage of
+development: the technical foundations of voice processing exist
+\citep{Fagherazzi2021} and there is feasibility in mapping emotional markers
+based on textual transcripts of real interactions \citep{Imel2022}, but the
+multimodal integration that truly unites the acoustic aspects of voice with
+the semantic aspects of text in clinical communication remains incipient
+\citep{Albert2024}. This gap acquires precise clinical contour when confronted
+with the propedeutics of \citet{Porto2019}: if the propedeutic characteristics
+of the complaint have acoustic-prosodic correlates in speech (vocal tension for
+pain, hesitation and pauses for doubt, prosodic disengagement for barriers),
+no study in the corpus guides the extraction of vocal biomarkers by the
+clinical grammar of the anamnesis. The integration between the propedeutic
+model and the acoustic-semantic \textit{pipeline} represents the most
+unexplored methodological frontier of this review.
+
+%% ================================================================
+\section{Discussion}
+\label{sec:discussao}
+
+
+\subsection*{Two parallel axes without systematic convergence}
+
+The mapped studies reveal two lines of development advancing in parallel
+without systematic convergence in the literature.
+The first line, formed by clinical NLP studies (Axis~A) and automated
+documentation studies (Axis~B), treats speech as input for documentation:
+the clinical encounter is transcribed to generate SOAP notes, identify
+biomedical entities or populate electronic health record fields
+\citep{Bazoge2023,vanBuchem2021,Falcetta2023,Ng2025}.
+The second line, formed by physician-patient communication studies (Axis~C)
+and vocal biomarker studies (Axis~D), establishes what communication means
+clinically and demonstrates that acoustic signals carry diagnostic information
+\citep{Kelley2014,Fagherazzi2021,Albert2024}.
+In this tradition, communication quality is operationalised by self-report
+instruments or in-person observation, and vocal biomarkers are applied
+predominantly to the detection of health states (Parkinson's disease,
+depression, COVID-19), not to the communicational dynamics during the
+consultation.
+
+The methodological heterogeneity reflects this structural divide.
+NLP studies such as \citet{Bazoge2023} and
+\citet{Wang2018} employ entity extraction pipelines on retrospective
+EHR text; ASR studies such as \citet{vanBuchem2021} and
+\citet{Klusty2025} measure transcription accuracy and documentation time
+reduction; communication studies such as \citet{Shao2025} and
+\citet{Kelley2014} derive relational indicators through validated
+questionnaires. These traditions share the locus of clinical interaction
+but do not share measurement objects, making quantitative synthesis
+unfeasible with the studies in the current corpus.
+
+\subsection*{Confirmed gap: anamnesis as the object of analysis}
+
+No study in the corpus operationalises the anamnesis as a structured clinical
+event for the automatic extraction of speech-derived communicational and
+behavioural markers.
+The distinction is critical: most studies treat the clinical interaction as a
+\emph{means} -- to produce documentation or detect pathologies -- not as an
+\emph{object} of communicational analysis.
+\citet{Krishna2021} and
+\citet{Schloss2020} classify utterances by SOAP structure, not by the
+relational quality of the encounter.
+\citet{Abbasian2024} evaluate the efficacy of conversations generated by
+generative AI, not the communicative behaviour of the healthcare professional
+in real context.
+\citet{Shao2025} and \citet{McCabe2018} describe relevant dimensions of
+communicative quality -- clarity, empathy, comprehension barriers -- but
+operationalise them through self-report instruments, not through automatically
+extracted speech markers.
+
+The review by \citet{Albert2024} is the one that comes closest to this
+intersection: it maps SA and NLP methods for clinical communication assessment,
+but confirms the scarcity of studies linking acoustic-prosodic markers to
+measurable communicational outcomes, particularly in rehabilitation contexts.
+\citet{Porto2019} offers a precise semiological framework for orthopedic
+anamnesis, including symptom hierarchy, chronology and functional exploration,
+which could guide the operational definition of these markers; however, no
+study retrieved in this review integrates that framework with automated
+speech analysis.
+
+\subsection*{Implications for prospective studies}
+
+The identified gap points to a set of requirements for future studies:
+(i)~recording of real clinical encounters under ecological conditions;
+(ii)~ASR with models fine-tuned to Brazilian Portuguese;
+(iii)~extraction of communicational markers (expression of doubt, pain,
+engagement, linguistic barriers) anchored in the semiological framework of
+the anamnesis \citep{Porto2019}; and
+(iv)~correlation of these markers with adherence outcomes and quality of care
+in longitudinal follow-up.
+Author et al.\ [2026] propose exactly this integration: a prospective
+observational study in orthopedic rehabilitation consultations at SUS
+(Brazil's National Health System), with transcription via ASR
+(Whisper \citep{Radford2023}) in on-premise processing and marker extraction
+for longitudinal outcome analysis.
+This approach is anchored in the technical repertoires of Axes~A, B and D
+and in the communicational constructs of Axis~C, integrating them in an
+unprecedented manner around the anamnesis as the primary unit of analysis.
+
+\subsection*{Limitations of this review}
+
+This review presents four central limitations.
+First, although the electronic search was concentrated in PubMed/MEDLINE as
+the primary database, the inclusion of additional articles via
+\textit{snowballing} (including relevant systematic reviews and reference
+studies) aimed to mitigate the loss of essential articles; however, the
+absence of automated searches in other indexed electronic databases (such as
+Scopus and Web of Science) remains a limitation for full generalisation of
+the literature.
+Second, there is a language bias: the mapped literature is predominantly in
+English, with under-representation of studies conducted in the Brazilian
+health context and in Portuguese, which may underestimate local Speech
+Analytics initiatives applied to SUS.
+Third, the selection of search filters in the primary database, such as the
+requirement of free full text, may have excluded relevant studies protected
+by paywall or journal subscription restrictions.
+Fourth, the heterogeneity of study type -- including systematic reviews,
+empirical studies, preprints and conceptual models -- prevents the conduct of
+a quantitative synthesis or structured meta-analysis, also limiting direct
+comparisons of methodological quality between approaches.
+
+\subsection*{Ethical considerations}
+
+The application of Speech Analytics in clinical consultations raises ethical
+questions that go beyond standard human research considerations.
+Voice constitutes sensitive biometric data under the terms of the General
+Personal Data Protection Law (LGPD, Law No.~13.709/2018), imposing
+obligations of data minimisation, pseudonymisation, separation between
+identified and analytical datasets, and restricted access control.
+Research must be conducted in compliance with CNS Resolution
+No.~466/2012 \citep{CNS466_2012} and CNS Resolution No.~510/2016
+\citep{CNS510_2016}, and with Law No.~14.874/2024 \citep{Lei14874_2024},
+which updates the regulatory framework for clinical research in Brazil.
+The Free and Informed Consent Form (TCLE -- \textit{Termo de Consentimento
+Livre e Esclarecido}) is mandatory for voice recording and cannot be waived
+when speech itself constitutes the object of analysis.
+
+From a technical standpoint, \citet{Klusty2025}
+demonstrate that on-premise processing is feasible in a hospital environment
+and represents the most appropriate solution for privacy, eliminating the
+transmission of sensitive data to external servers.
+This approach aligns with the five principles for responsible AI proposed by
+\citet{Floridi2018} (beneficence, non-maleficence, autonomy, justice and
+explicability), and with the international recommendations of the OECD
+\citep{OECD2024} and the World Health Organization \citep{WHO2024} for
+ethical governance of large-scale AI models in healthcare.
+The research protocol must also explicitly prohibit the use of extracted
+markers for autonomous clinical decision-making, preserving the
+decision-making role of the healthcare professional and the informed autonomy
+of the patient.
+
+%% ================================================================
+\section{Conclusion}
+\label{sec:conclusao}
+
+This scoping review mapped the state of the art in Speech Analytics and
+clinical communication with the aim of establishing the scientific foundation
+for prospective studies that integrate automated speech analysis with the
+assessment of communicational quality in orthopedic rehabilitation contexts.
+
+The four thematic axes evidence consolidated advances in clinical NLP and ASR:
+biomedical entity extraction \textit{pipelines} achieve competitive performance
+in electronic health records \citep{Bazoge2023,Koleck2019}, speech recognition
+models such as Whisper \citep{Radford2023} enable the transcription of clinical
+encounters in hospital settings \citep{Klusty2025,Ng2025}, and vocal
+biomarkers demonstrate the capacity to capture physiological and emotional
+states relevant to healthcare \citep{Fagherazzi2021,Albert2024}.
+The physician-patient communication literature, in turn, consistently
+establishes that the relational quality of the clinical encounter influences
+therapeutic adherence and health outcomes \citep{Kelley2014,Rucinski2022}.
+
+However, the review confirms a consistent and specific gap: few studies
+operationalise clinical interactions as a source of speech-derived measurable
+variables, particularly communicational and behavioural markers (expression of
+doubt, pain, engagement, comprehension barriers) automatically extracted
+during the anamnesis as a structured event.
+Most initiatives treat speech as input for documentation or as a signal for
+pathology detection, without anchoring the analysis in the semiological
+framework of the anamnesis \citep{Porto2019}, which defines what, in speech,
+is clinically significant from a communicational standpoint.
+
+This gap points to the need for prospective studies that integrate Speech
+Analytics with structured analysis of clinical communication for real-time
+adherence monitoring and quality of care.
+Such studies require, in addition to adequate technical infrastructure, a
+robust ethical protocol that treats voice as sensitive biometric data, ensures
+informed consent and preserves patient privacy through local data processing.
+The methodological protocol described in [Author et al., 2026] represents a
+direct response to this set of requirements in the context of SUS (Brazil's
+National Health System).
+
+%% ================================================================
+\section*{Declarations}
+
+\subsection*{Funding}
+This study received no funding from funding agencies or entities from the
+public, commercial or non-profit sectors.
+Article processing charges (APC) are waived for the corresponding author's
+institution under the Open Access Agreement signed with Elsevier for the
+period 2026--2028 (\textit{Read \& Publish Agreement}).
+
+\subsection*{Conflict of interest}
+None of the authors has employment, consultancy, equity, honoraria, patents
+or funding ties to entities with commercial or institutional interest in the
+topic of this review.
+The prospective study protocol cited in the text [Author et al., 2026] is
+co-authored by members of the authorship team; this relationship will be
+fully disclosed in the author list upon acceptance and does not constitute
+a conflict of interest under ICMJE guidelines.
+
+\subsection*{Ethical approval}
+Not applicable. This study consists of a scoping review based exclusively on
+published and publicly accessible scientific literature. No primary data were
+collected, no participants were recruited, and no intervention was performed
+on human subjects.
+Under the terms of CNS Resolution No.~510/2016 \citep{CNS510_2016}, studies
+using public domain information are exempt from registration and assessment
+by the CEP/CONEP system.
+
+\subsection*{Data availability}
+The data supporting the findings of this review are available as follows:
+(i)~the \textbf{complete search strings} per database are registered in
+supplementary file~S1 and in the project's public repository
+([URL removed for blind review]);
+(ii)~the \textbf{standardised data extraction form} (fields extracted per
+study, including authors, year, study design, population, technology used,
+outcomes and methodological quality assessment) is available as supplementary
+material~S2;
+(iii)~\textbf{screening decisions} (inclusion/exclusion by title, abstract
+and full text), with the respective reasons for exclusion, were recorded in
+the Rayyan platform \citep{Ouzzani2016} and are made available upon request
+to the corresponding author;
+(iv)~the \textbf{complete list of included studies}, with classification by
+thematic axis and quality score, is incorporated in Table~\ref{tab:estudos}
+in the body of the article.
+Raw data from recordings, transcriptions or patient records do not apply to
+this study, which is based exclusively on published literature.
+
+\subsection*{Use of artificial intelligence}
+In accordance with Elsevier's Generative AI Policy, the authors declare that
+artificial intelligence tools were used in the preparation of this work for
+literature search assistance, corpus screening support, data extraction and
+translation of excerpts from articles consulted in a foreign language.
+All intellectual content, analyses, syntheses and conclusions are the sole
+responsibility of the authors, who fully reviewed and validated all material
+produced with AI assistance.
+
+%% ================================================================
+\bibliographystyle{cas-model2-names}
+\bibliography{references}
+
+\end{document}
