@@ -1,17 +1,17 @@
 %%
-%% Speech Analytics e Processamento de Linguagem Natural Aplicados à
-%% Comunicação Clínica: Uma Revisão Bibliográfica
+%% Speech Analytics and Natural Language Processing Applied to
+%% Clinical Communication: A Scoping Review
 %%
-%% Autores: Rafael Baena Neto, Vicente Idalberto Becerra Sablón,
+%% Authors: Rafael Baena Neto, Vicente Idalberto Becerra Sablón,
 %%          Fabrício Evangelista dos Santos, Lucas Kenzo Terazzin Ida,
 %%          Murilo Nogueira Minutti
 %%
-%% Periódico-alvo: International Journal of Medical Informatics (IJMI)
-%% APC coberto: Acordo CAPES/Elsevier Read & Publish 2026–2028
-%% Classe: cas-sc.cls v2.4 (coluna única — para submissão/revisão)
+%% Target journal: International Journal of Medical Informatics (IJMI)
+%% APC covered: CAPES/Elsevier Read & Publish Agreement 2026–2028
+%% Class: cas-sc.cls v2.4 (single-column — for submission/review)
 %%
-%% NOTA: Este arquivo está em português para revisão interna.
-%% Tradução para o inglês será realizada na etapa final (Gate 4).
+%% NOTE: This file is the English version for IJMI submission (branch: en-submission).
+%% Portuguese version for internal review is maintained on the main branch.
 %%
 
 \documentclass[a4paper,fleqn]{cas-sc}
@@ -20,7 +20,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[brazil]{babel}
+\usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \DeclareSymbolFont{CMSYfix}{OMS}{cmsy}{m}{n}
@@ -43,21 +43,21 @@
 \def\textpagefraction{.001}
 
 %% ----------------------------------------------------------------
-%% Cabeçalho corrente
+%% Running head
 %% ----------------------------------------------------------------
-\shorttitle{Speech Analytics na Comunicação Clínica}
+\shorttitle{Speech Analytics in Clinical Communication}
 \shortauthors{R. Baena Neto et~al.}
 
 %% ----------------------------------------------------------------
-%% Título
+%% Title
 %% ----------------------------------------------------------------
-\title[mode=title]{Speech Analytics e Processamento de Linguagem Natural
-Aplicados à Comunicação Clínica: Uma Revisão Bibliográfica}
+\title[mode=title]{Speech Analytics and Natural Language Processing
+Applied to Clinical Communication: A Scoping Review}
 
 %% ----------------------------------------------------------------
-%% Autores e afiliações
-%% Afiliação [1]: Pós-Graduação em Ciência de Dados em Saúde, USF
-%% Afiliação [2]: Engenharia da Computação, USF (alunos de IC)
+%% Authors and affiliations
+%% Affiliation [1]: Graduate Program in Health Data Science, USF
+%% Affiliation [2]: Computer Engineering, USF (undergraduate research students)
 %% ----------------------------------------------------------------
 \author[1]{Rafael Baena Neto}[%
   type=editor,
@@ -67,17 +67,17 @@ Aplicados à Comunicação Clínica: Uma Revisão Bibliográfica}
 \cormark[1]
 \fnmark[1]
 \ead{rafael.baena@mail.usf.edu.br}
-\credit{Conceptualização, Metodologia, Curadoria de dados, Análise formal,
-        Redação -- rascunho original}
+\credit{Conceptualization, Methodology, Data curation, Formal analysis,
+        Writing -- original draft}
 
 \affiliation[1]{%
-  organization={Programa de Pós-Graduação em Ciência de Dados em Saúde,
+  organization={Graduate Program in Health Data Science,
                 Universidade São Francisco (USF)},
   addressline={Rua Alexandre Rodrigues Barbosa, 45},
   city={Bragança Paulista},
   postcode={12916-900},
   state={SP},
-  country={Brasil}
+  country={Brazil}
 }
 
 \author[1]{Vicente Idalberto Becerra Sablón}[%
@@ -85,248 +85,256 @@ Aplicados à Comunicação Clínica: Uma Revisão Bibliográfica}
 ]
 \fnmark[2]
 \ead{vicente.sablon@usf.edu.br}
-\credit{Supervisão, Conceptualização, Redação -- revisão e edição}
+\credit{Supervision, Conceptualization, Writing -- review \& editing}
 
 \author[2]{Fabrício Evangelista dos Santos}[%
   orcid=0009-0005-8163-3479
 ]
 \fnmark[3]
 \ead{fabricio.evangelista@mail.usf.edu.br}
-\credit{Investigação, Curadoria de dados, Metodologia, Software,
-        Redação -- revisão e edição}
+\credit{Investigation, Data curation, Methodology, Software,
+        Writing -- review \& editing}
 
 \author[2]{Lucas Kenzo Terazzin Ida}[%
   orcid=0009-0009-2328-5022
 ]
 \fnmark[4]
 \ead{lucas.ida@mail.usf.edu.br}
-\credit{Investigação, Curadoria de dados, Análise formal,
-        Redação -- revisão e edição}
+\credit{Investigation, Data curation, Formal analysis,
+        Writing -- review \& editing}
 
 \author[2]{Murilo Nogueira Minutti}[%
   orcid=0009-0000-6411-1576
 ]
 \fnmark[5]
 \ead{murilo.minutti@mail.usf.edu.br}
-\credit{Investigação, Curadoria de dados, Análise formal, Visualização,
-        Redação -- revisão e edição}
+\credit{Investigation, Data curation, Formal analysis, Visualization,
+        Writing -- review \& editing}
 
 \affiliation[2]{%
-  organization={Curso de Engenharia da Computação,
+  organization={Department of Computer Engineering,
                 Universidade São Francisco (USF)},
   addressline={Rua Alexandre Rodrigues Barbosa, 45},
   city={Bragança Paulista},
   postcode={12916-900},
   state={SP},
-  country={Brasil}
+  country={Brazil}
 }
 
-\cortext[1]{Autor correspondente}
-\fntext[1]{Mestrando, Programa de Pós-Graduação em Ciência de Dados em Saúde, USF.}
-\fntext[2]{Docente e orientador, Programa de Pós-Graduação em Ciência de Dados em Saúde, USF.}
-\fntext[3]{Aluno de Iniciação Científica, Engenharia da Computação, USF.}
-\fntext[4]{Aluno de Iniciação Científica, Engenharia da Computação, USF.}
-\fntext[5]{Aluno de Iniciação Científica, Engenharia da Computação, USF.}
+\cortext[1]{Corresponding author}
+\fntext[1]{MSc student, Graduate Program in Health Data Science, USF.}
+\fntext[2]{Faculty and supervisor, Graduate Program in Health Data Science, USF.}
+\fntext[3]{Undergraduate research student, Computer Engineering, USF.}
+\fntext[4]{Undergraduate research student, Computer Engineering, USF.}
+\fntext[5]{Undergraduate research student, Computer Engineering, USF.}
 
 %% ----------------------------------------------------------------
-%% Resumo — máximo 250 palavras (IJMI)
+%% Abstract — maximum 250 words (IJMI)
 %% ----------------------------------------------------------------
 \begin{abstract}
-\textbf{Contexto:}
-A comunicação profissional-paciente constitui uma fonte densa de informação
-clínica que ainda permanece predominantemente não estruturada e subutilizada
-analiticamente. Avanços recentes em Reconhecimento Automático de Fala (ASR),
-Processamento de Linguagem Natural (NLP) e análise de biomarcadores vocais
-têm ampliado a capacidade de extrair dados estruturados a partir de interações
-clínicas na anamnese. Ainda assim, poucos estudos operacionalizam essas
-interações como variáveis mensuráveis derivadas da fala, especialmente no que
-diz respeito a marcadores comunicacionais e comportamentais que podem ser
-utilizados para análise de dados e avaliação de resultados no cuidado do
-paciente.
+\textbf{Background:}
+Professional-patient communication constitutes a dense source of clinical
+information that remains predominantly unstructured and analytically
+underutilised. Recent advances in Automatic Speech Recognition (ASR),
+Natural Language Processing (NLP) and vocal biomarker analysis have expanded
+the capacity to extract structured data from clinical interactions during
+anamnesis. Nevertheless, few studies operationalise these interactions as
+measurable variables derived from speech, particularly with regard to
+communicational and behavioural markers that can be used for data analysis
+and outcome assessment in patient care.
 
-\textbf{Objetivo:}
-Identificar, sintetizar e avaliar criticamente as evidências sobre a aplicação
-de \textit{Speech Analytics} e NLP à comunicação clínica profissional-paciente,
-mapeando abordagens metodológicas, marcadores identificados, desafios técnicos
-e lacunas para pesquisa futura.
+\textbf{Objective:}
+To identify, synthesise and critically evaluate the evidence on the application
+of \textit{Speech Analytics} and NLP to professional-patient clinical
+communication, mapping methodological approaches, identified markers, technical
+challenges and gaps for future research.
 
-\textbf{Métodos:}
-Revisão bibliográfica seguindo as diretrizes PRISMA-ScR \citep{Tricco2018}
-e JBI \citep{Peters2020}. A busca foi concentrada na base de dados primária PubMed/MEDLINE (filtros: 2014-presente, inglês/espanhol e texto completo gratuito) e complementada por busca manual via \textit{snowballing}. O corpus final compreende 24~artigos selecionados a partir de 786~registros da busca eletrônica primária (após remoção de 27 duplicatas) e 7 estudos adicionados manualmente por busca ativa, organizados em quatro eixos temáticos: (A)~NLP clínico e extração de entidades
-biomédicas; (B)~documentação clínica automatizada e ASR;
-(C)~comunicação médico-paciente; (D)~biomarcadores vocais e análise multimodal.
+\textbf{Methods:}
+Scoping review following the PRISMA-ScR guidelines \citep{Tricco2018}
+and JBI \citep{Peters2020}. The search was concentrated on the primary
+database PubMed/MEDLINE (filters: 2014-present, English/Spanish, free full
+text) and supplemented by manual \textit{snowballing}. The final corpus
+comprises 24~articles selected from 786~records in the primary electronic
+search (after removing 27 duplicates) and 7 studies added manually by active
+search, organised into four thematic axes: (A)~Clinical NLP and biomedical
+entity extraction; (B)~automated clinical documentation and ASR;
+(C)~physician-patient communication; (D)~vocal biomarkers and multimodal
+analysis.
 
-\textbf{Resultados:}
-Os estudos evidenciam avanços consolidados em NLP clínico (modelos baseados
-em \textit{transformers}, BERT lidera o Reconhecimento de Entidades Nomeadas)
-e em transcrição automatizada (WER $\approx$9\% alcançável com
-Whisper/PyAnnote). A comunicação centrada no paciente demonstra impacto
-mensurável em desfechos objetivos de saúde. Marcadores comunicacionais autorreparo,
-engajamento, suporte emocional e indicadores de barreira são identificados
-como preditores de adesão. A análise multimodal
-(acústica\,+\,semântica) permanece em estado inicial; a maioria das
-abordagens foca em automação documental, negligenciando a interação clínica
-como objeto de análise em si.
+\textbf{Results:}
+Studies evidence consolidated advances in clinical NLP (\textit{transformer}-based
+models, BERT leads Named Entity Recognition) and automated transcription
+(WER $\approx$9\% achievable with Whisper/PyAnnote). Patient-centred
+communication demonstrates measurable impact on objective health outcomes.
+Communicational markers -- self-repair, engagement, emotional support and
+barrier indicators -- are identified as adherence predictors. Multimodal
+analysis (acoustic\,+\,semantic) remains in an early stage; most approaches
+focus on documentation automation, neglecting clinical interaction as an
+object of analysis in its own right.
 
-\textbf{Conclusões:}
-Confirma-se uma lacuna consistente: poucos estudos operacionalizam interações
-clínicas como variáveis mensuráveis derivadas da fala, especialmente
-marcadores comunicacionais e comportamentais extraídos da anamnese. Esta
-revisão fundamenta a necessidade de estudos que integrem \textit{Speech
-Analytics} à análise estruturada da comunicação clínica como fonte de dados
-para monitoramento de adesão e qualidade do cuidado.
+\textbf{Conclusions:}
+A consistent gap is confirmed: few studies operationalise clinical interactions
+as measurable variables derived from speech, particularly communicational
+and behavioural markers extracted from the anamnesis. This review grounds the
+need for studies integrating \textit{Speech Analytics} with structured analysis
+of clinical communication as a data source for adherence monitoring and quality
+of care.
 
 \end{abstract}
 
 %% ----------------------------------------------------------------
-%% Research Highlights — OBRIGATÓRIO no IJMI (3 itens, máx. 85 caracteres)
+%% Research Highlights — REQUIRED in IJMI (3 items, max. 85 characters)
 %% ----------------------------------------------------------------
 \begin{highlights}
-\item Modelos BERT lideram NER clínico; WER $\approx$9\% alcançável com
-      pipelines Whisper/PyAnnote
-\item Marcadores comunicacionais (autorreparo, engajamento, barreiras)
-      predizem adesão terapêutica
-\item Lacuna confirmada: interações clínicas raramente operacionalizadas
-      como variáveis derivadas da fala
+\item BERT models lead clinical NER; WER $\approx$9\% achievable with
+      Whisper/PyAnnote pipelines
+\item Communication markers (self-repair, engagement, barriers)
+      predict therapeutic adherence
+\item Confirmed gap: clinical interactions rarely operationalized
+      as speech-derived variables
 \end{highlights}
 
 %% ----------------------------------------------------------------
-%% Palavras-chave
+%% Keywords
 %% ----------------------------------------------------------------
 \begin{keywords}
 Speech analytics \sep
-Processamento de linguagem natural \sep
-Comunicação clínica \sep
-Reconhecimento automático de fala \sep
-Marcadores comunicacionais \sep
+Natural language processing \sep
+Clinical communication \sep
+Automatic speech recognition \sep
+Communication markers \sep
 Digital scribe
 \end{keywords}
 
 \maketitle
 
 %% ================================================================
-\section{Introdução}
+\section{Introduction}
 \label{sec:intro}
 
-A comunicação clínica constitui uma das mais ricas e menos exploradas fontes
-de dados em saúde. Em sistemas públicos de saúde, anamneses e orientações
-terapêuticas, interações verbais com estrutura propedêutica definida
-pela semiologia clínica \citep{Porto2019}, ocorrem predominantemente
-como trocas não estruturadas do ponto de vista analítico, raramente
-convertidas em dados mensuráveis \citep{Wang2018,Koleck2019}.
+Clinical communication is one of the richest and least explored data sources
+in healthcare. In public health systems, anamnesis sessions and therapeutic
+guidance -- verbal interactions with a propedeutic structure defined
+by clinical semiology \citep{Porto2019} -- occur predominantly
+as analytically unstructured exchanges, rarely converted into measurable
+data \citep{Wang2018,Koleck2019}.
 
-A qualidade da interação profissional-paciente demonstra impacto mensurável
-sobre a adesão e os desfechos clínicos objetivos \citep{Kelley2014}. Barreiras
-comunicacionais, incluindo lacunas de literacia em saúde, expectativas
-desalinhadas e padrões de miscomunicação, associam-se à baixa adesão
-terapêutica e pior prognóstico \citep{McCabe2018,Alkhamees2023}.
+The quality of the professional-patient interaction has a measurable impact
+on adherence and objective clinical outcomes \citep{Kelley2014}. Communication
+barriers -- including health literacy gaps, misaligned expectations and
+miscommunication patterns -- are associated with low therapeutic adherence
+and worse prognosis \citep{McCabe2018,Alkhamees2023}.
 
-O \textit{Speech Analytics}, análise computacional da linguagem falada,
-oferece um caminho para extrair indicadores estruturados e mensuráveis
-dessas interações. Avanços recentes em ASR, especialmente modelos baseados
-em \textit{transformers} como o Whisper \citep{Radford2023}, combinados a
-grandes modelos de linguagem (LLMs) com instruções, reduziram as barreiras
-para implantação de \textit{pipelines} de NLP ponta-a-ponta na saúde
-\citep{Klusty2025}. Ainda assim, a maioria das abordagens existentes visa
-suporte diagnóstico ou automação documental, não tratando a interação clínica
-em si como objeto de análise estruturada \citep{vanBuchem2021}. O desenvolvimento
-de um protocolo de \textit{Speech Analytics} para monitoramento da reabilitação
-ortopédica em sistema público de saúde \citep{BaenaNeto2026} exemplifica o
-potencial translacional dessas tecnologias e evidencia a necessidade de um
-mapa consolidado de evidências para subsidiar o desenho de estudos prospectivos.
+\textit{Speech Analytics} -- the computational analysis of spoken language --
+offers a pathway to extract structured and measurable indicators from these
+interactions. Recent advances in ASR, particularly transformer-based models
+such as Whisper \citep{Radford2023}, combined with instruction-tuned large
+language models (LLMs), have lowered the barriers for deploying end-to-end
+NLP \textit{pipelines} in healthcare \citep{Klusty2025}. Nevertheless, most
+existing approaches target diagnostic support or documentation automation,
+without treating the clinical interaction itself as an object of structured
+analysis \citep{vanBuchem2021}. The development of a \textit{Speech Analytics}
+protocol for monitoring orthopedic rehabilitation in a public health system
+\citep{BaenaNeto2026} exemplifies the translational potential of these
+technologies and underscores the need for a consolidated evidence map to
+support the design of prospective studies.
 
-Revisões recentes têm abordado aspectos parcialmente sobrepostos a este
-escopo. \citet{Falcetta2023} identificaram ausência
-de validação prospectiva em sistemas de documentação automática de
-interações clínicas. \citet{Ng2025} avaliaram o desempenho
-técnico de sistemas de ASR para documentação clínica, reportando WER
-entre 8,7\% e mais de 50\% conforme o contexto. \citet{Alabbad2026}
-mapearam aplicações de ASR na saúde na era
-pós-LLM. \citet{Albert2024} realizaram uma revisão de
-escopo sobre métodos de IA, fala e NLP para avaliação da comunicação
-clínico-paciente. Nenhuma dessas revisões, contudo, concentra-se na
-operacionalização da interação clínica como conjunto de \textbf{variáveis
-mensuráveis derivadas da fala}, especialmente marcadores comunicacionais
-e comportamentais (autorreparo, engajamento, barreiras, literacia), como
-objeto de análise em si, independente da documentação ou do diagnóstico.
-É precisamente essa lacuna que a presente revisão se propõe a mapear.
+Recent reviews have addressed aspects partially overlapping with this scope.
+\citet{Falcetta2023} identified the absence of prospective validation in
+automated documentation systems for clinical interactions. \citet{Ng2025}
+evaluated the technical performance of ASR systems for clinical documentation,
+reporting WER values between 8.7\% and over 50\% depending on the context.
+\citet{Alabbad2026} mapped ASR applications in healthcare in the post-LLM
+era. \citet{Albert2024} conducted a scoping review on AI, speech and NLP
+methods for clinician-patient communication assessment. None of these reviews,
+however, focuses on the operationalisation of the clinical interaction as a
+set of \textbf{speech-derived measurable variables} -- particularly
+communicational and behavioural markers (self-repair, engagement, barriers,
+health literacy) -- as an object of analysis in its own right, independent of
+documentation or diagnosis. It is precisely this gap that the present review
+aims to map.
 
-Esta revisão bibliográfica tem como objetivo mapear as evidências sobre
-\textit{Speech Analytics} e NLP aplicados à comunicação clínica,
-caracterizando o panorama metodológico e identificando lacunas para
-pesquisas futuras.
+This scoping review aims to map the evidence on \textit{Speech Analytics}
+and NLP applied to clinical communication, characterising the methodological
+landscape and identifying gaps for future research.
 
 %% ================================================================
-\section{Métodos}
+\section{Methods}
 \label{sec:metodos}
 
-\subsection{Desenho do estudo}
+\subsection{Study design}
 
-Esta revisão bibliográfica segue o referencial metodológico proposto por
-\citet{Arksey2005}, refinado por \citet{Levac2010} e pelo Instituto Joanna
-Briggs (JBI) \citep{Peters2020}. A condução e o relato seguem as diretrizes
-PRISMA-ScR (\textit{Preferred Reporting Items for Systematic Reviews and
-Meta-Analyses} extensão para Scoping Reviews) \citep{Tricco2018}.
+This scoping review follows the methodological framework proposed by
+\citet{Arksey2005}, refined by \citet{Levac2010} and the Joanna Briggs
+Institute (JBI) \citep{Peters2020}. Conduct and reporting follow the
+PRISMA-ScR guidelines (\textit{Preferred Reporting Items for Systematic
+Reviews and Meta-Analyses} extension for Scoping Reviews) \citep{Tricco2018}.
 
-\subsection{Perguntas de pesquisa}
+\subsection{Research questions}
 
 \begin{itemize}
-  \item \textbf{Q1:} Quais abordagens de \textit{Speech Analytics} têm sido
-        aplicadas à comunicação clínica nos últimos cinco anos?
-  \item \textbf{Q2:} Quais métodos de NLP e ASR são utilizados para transcrição
-        e análise automatizada de consultas clínicas?
-  \item \textbf{Q3:} Quais marcadores comunicacionais e comportamentais foram
-        identificados ou propostos na interação profissional-paciente?
-  \item \textbf{Q4:} Quais são os desafios técnicos, éticos e metodológicos
-        para a análise automatizada da comunicação clínica?
+  \item \textbf{Q1:} Which \textit{Speech Analytics} approaches have been
+        applied to clinical communication over the past five years?
+  \item \textbf{Q2:} Which NLP and ASR methods are used for automated
+        transcription and analysis of clinical consultations?
+  \item \textbf{Q3:} Which communicational and behavioural markers have been
+        identified or proposed in the professional-patient interaction?
+  \item \textbf{Q4:} What are the technical, ethical and methodological
+        challenges for automated analysis of clinical communication?
 \end{itemize}
 
-\subsection{Critérios de elegibilidade}
+\subsection{Eligibility criteria}
 
-\subsubsection{Critérios de inclusão}
+\subsubsection{Inclusion criteria}
 \begin{itemize}
-  \item \textbf{IC1:} O estudo aplica tecnologias de \textit{Speech Analytics},
-        NLP ou ASR para transcrição clínica e extração de dados médicos não
-        estruturados, ou analisa e mensura os fundamentos da comunicação
-        profissional-paciente.
-  \item \textbf{IC2:} O estudo foca em interações baseadas em texto livre de
-        prontuários (\textit{free-text}), diálogos clínicos falados (consultas),
-        geração de documentação automatizada (escribas digitais/notas SOAP) ou
-        marcos teóricos da tomada de decisão compartilhada.
-  \item \textbf{IC3:} Disponibilidade de texto completo em inglês, português ou
-        espanhol; publicação no período de janeiro de 2014 a 2026.
-  \item \textbf{IC4:} Apresenta desenvolvimento original, teste de viabilidade
-        empírica, validação de algoritmos, ou constitui revisão sistemática ou de
-        escopo anterior sobre o tema.
+  \item \textbf{IC1:} The study applies \textit{Speech Analytics}, NLP or ASR
+        technologies for clinical transcription and extraction of unstructured
+        medical data, or analyses and measures the foundations of
+        professional-patient communication.
+  \item \textbf{IC2:} The study focuses on free-text EHR interactions, spoken
+        clinical dialogues (consultations), automated documentation generation
+        (digital scribes/SOAP notes) or theoretical frameworks of shared
+        decision-making.
+  \item \textbf{IC3:} Full-text availability in English, Portuguese or Spanish;
+        published between January 2014 and 2026.
+  \item \textbf{IC4:} Presents original development, empirical feasibility
+        testing, algorithm validation, or constitutes a prior systematic or
+        scoping review on the topic.
 \end{itemize}
 
-\subsubsection{Critérios de exclusão}
+\subsubsection{Exclusion criteria}
 \begin{itemize}
-  \item \textbf{EC1:} Estudos que não abordem PLN, ASR ou análise de áudio de
-        interações clínicas.
-  \item \textbf{EC2:} Pesquisas que descrevam sistemas de transcrição ou extração
-        sem analisar a qualidade da interação ou o impacto na relação
-        profissional-paciente.
-  \item \textbf{EC3:} Foco exclusivo em diagnóstico por voz de condições físicas
-        ou psiquiátricas sem análise da interação dialógica.
-  \item \textbf{EC4:} Artigos de opinião, comentários, editoriais, resumos de
-        conferência ou livros.
-  \item \textbf{EC5:} Texto completo indisponível sem pagamento ou inacessível
-        por canais institucionais.
-  \item \textbf{EC6:} Estudos que não descrevem coleta de dados, metodologia de
-        processamento ou validação técnica.
-  \item \textbf{EC7:} Pesquisas que abordem exclusivamente interações não clínicas
-        ou contextos simulados sem transferibilidade prática demonstrada.
+  \item \textbf{EC1:} Studies that do not address NLP, ASR or audio analysis
+        of clinical interactions.
+  \item \textbf{EC2:} Studies describing transcription or extraction systems
+        without analysing interaction quality or impact on the
+        professional-patient relationship.
+  \item \textbf{EC3:} Exclusive focus on voice-based diagnosis of physical or
+        psychiatric conditions without analysis of dialogic interaction.
+  \item \textbf{EC4:} Opinion pieces, commentaries, editorials, conference
+        abstracts or books.
+  \item \textbf{EC5:} Full text unavailable without payment or inaccessible
+        through institutional channels.
+  \item \textbf{EC6:} Studies that do not describe data collection, processing
+        methodology or technical validation.
+  \item \textbf{EC7:} Studies addressing exclusively non-clinical interactions
+        or simulated contexts without demonstrated practical transferability.
 \end{itemize}
 
-\subsection{Fontes de informação e estratégia de busca}
+\subsection{Information sources and search strategy}
 
-A busca bibliográfica foi conduzida de forma independente por três pesquisadores diferentes, cada um operando múltiplas estratégias de busca para cobrir os eixos temáticos da revisão. A base de dados primária utilizada foi o PubMed/MEDLINE. Foram aplicados os seguintes filtros de busca: período de publicação de janeiro de 2014 ao presente (2026), artigos publicados nos idiomas inglês e espanhol, e disponibilidade de texto completo gratuito (\textit{free full text}).
+The literature search was conducted independently by three different
+researchers, each using multiple search strategies to cover the thematic
+axes of the review. The primary database used was PubMed/MEDLINE. The
+following search filters were applied: publication period from January 2014
+to the present (2026), articles published in English and Spanish, and
+availability of free full text.
 
-Cada pesquisador utilizou mais de uma string de busca para realizar as pesquisas. As strings específicas utilizadas foram as seguintes:
+Each researcher used more than one search string. The specific strings used
+were as follows:
 
 \begin{enumerate}
-  \item \textbf{String 1 (PLN, Sintomas e Prontuários):}
+  \item \textbf{String 1 (NLP, Symptoms and EHR):}
         \begin{verbatim}
 ("natural language processing"[Title/Abstract])
 AND
@@ -335,7 +343,7 @@ AND
 ("electronic health records"[Title/Abstract] OR "patient-centered"[Title/Abstract])
         \end{verbatim}
 
-  \item \textbf{String 2 (Extração de Informação Clínica e NER):}
+  \item \textbf{String 2 (Clinical Information Extraction and NER):}
         \begin{verbatim}
 ("clinical information extraction"[Title/Abstract]
 OR "medical information extraction"[Title/Abstract]
@@ -346,7 +354,7 @@ OR "review"[Title/Abstract]
 OR "patient-generated health data"[Title/Abstract])
         \end{verbatim}
 
-  \item \textbf{String 3 (Comunicação Clínico-Paciente e Desfechos):}
+  \item \textbf{String 3 (Clinician-Patient Communication and Outcomes):}
         \begin{verbatim}
 ("patient-physician communication"[Title/Abstract]
 OR "doctor-patient communication"[Title/Abstract]
@@ -359,7 +367,7 @@ OR "shared decision-making"[Title/Abstract]
 OR "communication quality scale"[Title/Abstract])
         \end{verbatim}
 
-  \item \textbf{String 4 (Biomarcadores Vocais e Speech Analytics):}
+  \item \textbf{String 4 (Vocal Biomarkers and Speech Analytics):}
         \begin{verbatim}
 ("vocal biomarkers"[Title/Abstract] OR "speech analytics"[Title/Abstract])
 AND
@@ -368,7 +376,7 @@ OR "voice for health"[Title/Abstract]
 OR "SUS"[Title/Abstract])
         \end{verbatim}
 
-  \item \textbf{String 5 (NLP, Speech e Revisões):}
+  \item \textbf{String 5 (NLP, Speech and Reviews):}
         \begin{verbatim}
 (("Applying natural language processing"[Title/Abstract])
   AND ("Systematic review"[Title/Abstract]))
@@ -381,7 +389,8 @@ OR
         \end{verbatim}
 \end{enumerate}
 
-Adicionalmente, foi executada uma busca abrangente utilizando a seguinte string geral unificada:
+Additionally, a comprehensive search was conducted using the following
+unified general string:
 
 \begin{verbatim}
 ("speech analytics" OR "speech analysis" OR "speech recognition"
@@ -400,617 +409,607 @@ OR doctor OR patient OR "electronic health record" OR EHR OR hospital
 OR outpatient)
 \end{verbatim}
 
-Para mitigar a perda de artigos relevantes e enriquecer qualitativamente o corpus, a busca eletrônica foi complementada pelo método de \textit{snowballing} (rastreamento manual de referências ou \textit{backward snowballing}). A partir das revisões sistemáticas e dos artigos fundamentais localizados na busca primária, realizou-se a análise manual de suas listas de referências para identificar e incluir outros estudos que atendem estritamente aos critérios de elegibilidade definidos, assegurando a cobertura de trabalhos chaves de relevância metodológica ou conceitual para a presente revisão.
+To mitigate the loss of relevant articles and qualitatively enrich the corpus,
+the electronic search was supplemented by the \textit{snowballing} method
+(manual reference tracking or \textit{backward snowballing}). From the
+systematic reviews and foundational articles located in the primary search,
+their reference lists were manually analysed to identify and include other
+studies that strictly meet the defined eligibility criteria, ensuring coverage
+of key works of methodological or conceptual relevance to this review.
 
-\subsection{Seleção de estudos}
+\subsection{Study selection}
 
-Os registros recuperados da busca primária no PubMed/MEDLINE foram importados no Rayyan
-\citep{Ouzzani2016} para deduplicação e triagem. Os títulos e resumos foram
-triados de forma independente por dois revisores (F.E.S. e M.M.), com
-concordância avaliada pelo coeficiente kappa de Cohen ($\kappa = 0{,}78$). Desacordos
-foram resolvidos por um terceiro revisor (L.K.T.I.) ou pelo autor correspondente.
-Os textos completos dos registros potencialmente elegíveis foram então
-recuperados e avaliados conforme os critérios de elegibilidade. O processo de
-seleção está documentado no fluxograma PRISMA-ScR (Fig.~\ref{fig:prisma}).
-%% κ = 0,78 (F.E.S. e M.M.; triagem dupla-cega Rayyan → irr::kappa2, weight="unweighted")
+Records retrieved from the primary PubMed/MEDLINE search were imported into
+Rayyan \citep{Ouzzani2016} for deduplication and screening. Titles and
+abstracts were screened independently by two reviewers (F.E.S. and M.M.),
+with agreement assessed using Cohen's kappa coefficient ($\kappa = 0.78$).
+Disagreements were resolved by a third reviewer (L.K.T.I.) or by the
+corresponding author. Full texts of potentially eligible records were then
+retrieved and assessed against the eligibility criteria. The selection process
+is documented in the PRISMA-ScR flowchart (Fig.~\ref{fig:prisma}).
+%% κ = 0.78 (F.E.S. and M.M.; double-blind Rayyan screening → irr::kappa2, weight="unweighted")
 
-\subsection{Extração de dados}
+\subsection{Data extraction}
 
-Os dados foram extraídos com formulário padronizado contendo: autor(es), ano,
-país, desenho do estudo, contexto clínico, características da população,
-tecnologia utilizada (modelo ASR, arcabouço NLP, LLM), variáveis clínicas
-extraídas, desfechos reportados, arcabouço ético e limitações.
+Data were extracted using a standardised form containing: author(s), year,
+country, study design, clinical context, population characteristics,
+technology used (ASR model, NLP framework, LLM), extracted clinical variables,
+reported outcomes, ethical framework and limitations.
 
-\subsection{Síntese}
+\subsection{Synthesis}
 
-Foi realizada uma síntese narrativa. Os achados estão organizados em torno
-dos quatro eixos temáticos definidos nos critérios de elegibilidade:
-(A)~NLP clínico e extração de entidades biomédicas;
-(B)~documentação clínica automatizada e ASR;
-(C)~comunicação médico-paciente; e
-(D)~biomarcadores vocais e análise multimodal.
+A narrative synthesis was performed. Findings are organised around the four
+thematic axes defined in the eligibility criteria:
+(A)~Clinical NLP and biomedical entity extraction;
+(B)~automated clinical documentation and ASR;
+(C)~physician-patient communication; and
+(D)~vocal biomarkers and multimodal analysis.
 
 %% ================================================================
-\section{Resultados}
+\section{Results}
 \label{sec:resultados}
 
 % ---------------------------------------------------------------
-\subsection{Seleção de estudos}
+\subsection{Study selection}
 % ---------------------------------------------------------------
 
-As buscas na base de dados primária (PubMed/MEDLINE) recuperaram 786~registros. Após remoção de 27~duplicatas, 759~registros foram triados por título e resumo, resultando em 35~artigos selecionados para avaliação de texto completo. Desses, 17~foram excluídos por não atenderem aos critérios de elegibilidade: 8~por não abordarem PLN, ASR ou análise de áudio de interações clínicas (EC1), 5~por descreverem sistemas de transcrição ou extração sem analisar a qualidade da interação profissional-paciente (EC2) e 4~por consistirem em artigos de opinião, editoriais ou documentos normativos sem dados empíricos (EC4). Os 7~artigos identificados por \textit{snowballing} (rastreamento retroativo de referências de revisões sistemáticas incluídas) foram submetidos à mesma avaliação de elegibilidade de forma independente dos registros eletrônicos; todos atenderam aos critérios de inclusão e nenhum foi excluído. Ao final, 24~artigos foram incluídos na síntese (17~da busca eletrônica + 7~do \textit{snowballing}). O fluxograma PRISMA-ScR está apresentado na Fig.~\ref{fig:prisma}.
+Searches in the primary database (PubMed/MEDLINE) retrieved 786~records.
+After removing 27~duplicates, 759~records were screened by title and abstract,
+resulting in 35~articles selected for full-text assessment. Of these,
+17~were excluded for not meeting the eligibility criteria: 8~for not addressing
+NLP, ASR or audio analysis of clinical interactions (EC1), 5~for describing
+transcription or extraction systems without analysing the quality of the
+professional-patient interaction (EC2), and 4~for consisting of opinion pieces,
+editorials or normative documents without empirical data (EC4). The 7~articles
+identified by \textit{snowballing} (backward reference tracking of included
+systematic reviews) were subjected to the same eligibility assessment
+independently of the electronic records; all met the inclusion criteria and
+none was excluded. In total, 24~articles were included in the synthesis
+(17~from the electronic search + 7~from \textit{snowballing}). The PRISMA-ScR
+flowchart is presented in Fig.~\ref{fig:prisma}.
 
 \begin{figure}[h]
   \centering
   \resizebox{\linewidth}{!}{\input{prisma_flow}}
-  \caption{Fluxograma PRISMA-ScR do processo de seleção de estudos.}
+  \caption{PRISMA-ScR flowchart of the study selection process.}
   \label{fig:prisma}
 \end{figure}
 
 % ---------------------------------------------------------------
-\subsection{Características dos estudos incluídos}
+\subsection{Characteristics of included studies}
 % ---------------------------------------------------------------
 
-Os 24~estudos do corpus abrangem o período 2014--2025
-(Tabela~\ref{tab:estudos}).
+The 24~studies in the corpus span the period 2014--2025
+(Table~\ref{tab:estudos}).
 
 \begin{longtable}{p{0.65cm} p{2.4cm} p{1.55cm} p{0.55cm} p{2.2cm} p{2.35cm} p{1.4cm}}
-\caption{Características dos estudos incluídos na síntese.}
+\caption{Characteristics of studies included in the synthesis.}
 \label{tab:estudos}\\
 \toprule
-\textbf{Cód.} & \textbf{Autor, ano} & \textbf{Tipo} &
-\textbf{Eixo} & \textbf{Tecnologia} & \textbf{Principal desfecho} & \textbf{País} \\
+\textbf{Code} & \textbf{Author, year} & \textbf{Type} &
+\textbf{Axis} & \textbf{Technology} & \textbf{Main outcome} & \textbf{Country} \\
 \midrule
 \endfirsthead
-\multicolumn{7}{l}{\small\textit{(continuação)}}\\
+\multicolumn{7}{l}{\small\textit{(continued)}}\\
 \toprule
-\textbf{Cód.} & \textbf{Autor, ano} & \textbf{Tipo} &
-\textbf{Eixo} & \textbf{Tecnologia} & \textbf{Principal desfecho} & \textbf{País} \\
+\textbf{Code} & \textbf{Author, year} & \textbf{Type} &
+\textbf{Axis} & \textbf{Technology} & \textbf{Main outcome} & \textbf{Country} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-%% ---- Eixo A: NLP clínico e extração de entidades biomédicas ----
-S01 & Bazoge et al., 2023    & Rev.\ sist.  & A & Transformers, BERT         & NER em CDWs; fenotipagem               & França        \\
-S02 & Navarro et al., 2023   & Rev.\ sist.  & A & BERT, BioBERT              & NER clínico (problemas, tratamentos)   & Austrália     \\
-S03 & Watabe et al., 2025    & Empírico     & A & BERT-CRF                   & F1\,>\,0{,}8; sintomas relatados       & Japão         \\
-S04 & Sezgin et al., 2023    & Empírico     & A & NER + SNOMED CT (zero-shot) & Identificação de sintomas em PGHD     & EUA           \\
-S05 & Koleck et al., 2019    & Rev.\ sist.  & A & NLP, classificadores       & Extração de sintomas em EHR            & EUA           \\
-S06 & Wang et al., 2018      & Rev.\ lit.   & A & cTAKES, MedLEE, ML         & 263 sistemas de extração clínica       & EUA           \\
-%% ---- Eixo B: Documentação clínica automatizada e ASR ----
-S07 & Krishna et al., 2021   & Preprint\textsuperscript{‡} & B & CLUSTER2SENT    & Notas SOAP geradas de consultas        & EUA           \\
-S08 & Klusty et al., 2025    & Empírico     & B & Whisper + PyAnnote         & Transcrição on-premise; privacidade    & EUA           \\
-S09 & Abbasian et al., 2024  & Framework    & B & IA generativa, RAG         & Groundedness, segurança, empatia       & EUA           \\
-S10 & Aleksić et al., 2017  & Empírico & B & Resumo de EHR & Dashboard para doença crônica & Sérvia  \\
-S11 & Tran et al., 2023      & Empírico     & B & ASR geral vs.\ especializado & WER; erros em pronomes curtos        & EUA           \\
-S12 & Schloss \& Konam, 2020 & Preprint\textsuperscript{‡} & B & Bi-LSTM hierárquico & Classificação utterances → SOAP  & EUA           \\
-S13 & van Buchem et al., 2021 & Scoping rev. & B & Escribas digitais (revisão) & Lacunas de usabilidade clínica real  & Países Baixos \\
-S14 & Falcetta et al., 2023  & Rev.\ sist.  & B & Escribas (revisão)         & Mapeamento de 22 escribas; sem validação prospectiva & Brasil \\
-S15 & Ng et al., 2025        & Rev.\ sist.  & B & ASR clínico (revisão)      & WER variou de 8,7\% a $>$50\% conforme contexto & Singapura \\
-%% ---- Eixo C: Comunicação médico-paciente ----
-S16 & Shao et al., 2025      & Empírico     & C & Escala DPCQ (14 itens)     & Qualidade da comunicação médico-paciente & China       \\
-S17 & Muscat et al., 2020    & Framework    & C & Tomada de decisão compartilhada & Literacia em saúde; engajamento & Austrália  \\
-S18 & Kelley et al., 2014    & Meta-análise & C & --                         & Relação clínica → desfechos objetivos  & EUA           \\
-S19 & Rucinski et al., 2022  & Rev.\ sist.  & C & Métricas de adesão         & Adesão bilateral em ortopedia          & EUA           \\
-S20 & McCabe \& Healey, 2018 & Empírico     & C & Análise de conversa        & Autorreparo como preditor de adesão    & RU            \\
-S21 & Alkhamees \& Alasqah, 2023 & Rev.\ integr. & C & --               & Barreiras interculturais na comunicação & Arábia S.   \\
-%% ---- Eixo D: Biomarcadores vocais e análise multimodal ----
-S22 & Fagherazzi et al., 2021 & Framework   & D & Pipeline vocal (acústica+NLP) & Biomarcadores vocais de saúde e emoção & Luxemburgo  \\
-S23 & Albert et al., 2024    & Scoping rev.\textsuperscript{‡} & D & IA, Speech, NLP & Comunicação clínico-paciente via IA & França  \\
-S24 & Imel et al., 2022      & Relatório    & D & Redes neurais sequenciais  & Valência emocional; concordância humana & EUA          \\
+%% ---- Axis A: Clinical NLP and biomedical entity extraction ----
+S01 & Bazoge et al., 2023    & Syst.\ rev.  & A & Transformers, BERT         & NER in CDWs; phenotyping               & France        \\
+S02 & Navarro et al., 2023   & Syst.\ rev.  & A & BERT, BioBERT              & Clinical NER (problems, treatments)    & Australia     \\
+S03 & Watabe et al., 2025    & Empirical    & A & BERT-CRF                   & F1\,>\,0.8; reported symptoms          & Japan         \\
+S04 & Sezgin et al., 2023    & Empirical    & A & NER + SNOMED CT (zero-shot) & Symptom identification in PGHD        & USA           \\
+S05 & Koleck et al., 2019    & Syst.\ rev.  & A & NLP, classifiers           & Symptom extraction from EHR            & USA           \\
+S06 & Wang et al., 2018      & Lit.\ rev.   & A & cTAKES, MedLEE, ML         & 263 clinical extraction systems        & USA           \\
+%% ---- Axis B: Automated clinical documentation and ASR ----
+S07 & Krishna et al., 2021   & Preprint\textsuperscript{‡} & B & CLUSTER2SENT    & SOAP notes generated from consultations & USA          \\
+S08 & Klusty et al., 2025    & Empirical    & B & Whisper + PyAnnote         & On-premise transcription; privacy      & USA           \\
+S09 & Abbasian et al., 2024  & Framework    & B & Generative AI, RAG         & Groundedness, safety, empathy          & USA           \\
+S10 & Aleksić et al., 2017  & Empirical & B & EHR summarisation & Dashboard for chronic disease & Serbia  \\
+S11 & Tran et al., 2023      & Empirical    & B & General vs.\ specialist ASR & WER; errors in short pronouns         & USA           \\
+S12 & Schloss \& Konam, 2020 & Preprint\textsuperscript{‡} & B & Hierarchical Bi-LSTM & Utterance classification → SOAP  & USA          \\
+S13 & van Buchem et al., 2021 & Scoping rev. & B & Digital scribes (review) & Usability gaps in real clinical use   & Netherlands   \\
+S14 & Falcetta et al., 2023  & Syst.\ rev.  & B & Scribes (review)           & Mapping of 22 scribes; no prospective validation & Brazil \\
+S15 & Ng et al., 2025        & Syst.\ rev.  & B & Clinical ASR (review)      & WER ranged from 8.7\% to $>$50\% by context & Singapore \\
+%% ---- Axis C: Physician-patient communication ----
+S16 & Shao et al., 2025      & Empirical    & C & DPCQ scale (14 items)      & Physician-patient communication quality & China       \\
+S17 & Muscat et al., 2020    & Framework    & C & Shared decision-making     & Health literacy; engagement            & Australia   \\
+S18 & Kelley et al., 2014    & Meta-analysis & C & --                        & Clinical relationship → objective outcomes & USA     \\
+S19 & Rucinski et al., 2022  & Syst.\ rev.  & C & Adherence metrics          & Bilateral adherence in orthopedics     & USA           \\
+S20 & McCabe \& Healey, 2018 & Empirical    & C & Conversation analysis      & Self-repair as adherence predictor     & UK            \\
+S21 & Alkhamees \& Alasqah, 2023 & Integr.\ rev. & C & --               & Intercultural barriers in communication & Saudi A.    \\
+%% ---- Axis D: Vocal biomarkers and multimodal analysis ----
+S22 & Fagherazzi et al., 2021 & Framework   & D & Vocal pipeline (acoustics+NLP) & Vocal biomarkers of health and emotion & Luxembourg \\
+S23 & Albert et al., 2024    & Scoping rev.\textsuperscript{‡} & D & AI, Speech, NLP & Clinician-patient communication via AI & France  \\
+S24 & Imel et al., 2022      & Report       & D & Sequential neural networks & Emotional valence; human rater agreement & USA         \\
 \midrule
 \multicolumn{7}{l}{\footnotesize\parbox{13.5cm}{%
-  \textsuperscript{‡}Preprint/não peer-reviewed (arXiv/medRxiv) --- incluídos por atenderem IC1--IC4; aceitação de preprints conforme política Elsevier/IJMI.}} \\
+  \textsuperscript{‡}Preprint/not peer-reviewed (arXiv/medRxiv) --- included as they meet IC1--IC4; preprint acceptance per Elsevier/IJMI policy.}} \\
 \end{longtable}
 
 % ---------------------------------------------------------------
-\subsection{Eixo A —NLP clínico e extração de entidades biomédicas}
+\subsection{Axis A —Clinical NLP and biomedical entity extraction}
 \label{subsec:eixoA}
-% Responsável: Murilo Nogueira Minutti
+% Lead: Murilo Nogueira Minutti
 % ---------------------------------------------------------------
 
-Os estudos do Eixo~A mapeiam a evolução das abordagens de PLN
-aplicadas à extração de informação clínica, documentando a transição
-de sistemas baseados em regras para arquiteturas de aprendizado
-profundo e modelos \textit{transformer}.
+The studies in Axis~A map the evolution of NLP approaches applied to clinical
+information extraction, documenting the transition from rule-based systems to
+deep learning architectures and \textit{transformer} models.
 
-O panorama histórico do campo é descrito por \citet{Wang2018}, cuja
-revisão de 263~estudos evidencia a predominância de sistemas
-simbólicos como cTAKES e MedLEE no processamento de registros
-eletrônicos de saúde. Os autores demonstram como a adesão a
-abordagens baseadas em regras linguísticas constituiu a norma até a
-chegada das técnicas de aprendizado de máquina. A consolidação da
-transição para modelos de aprendizado profundo é documentada por
-\citet{Bazoge2023}, em revisão sistemática sobre o uso de NLP em
-armazéns de dados clínicos (\textit{clinical data warehouses} --
-CDWs): os autores evidenciam a migração de métodos simbólicos para
-\textit{transformers}, identificando sua aplicabilidade em tarefas de
-fenotipagem e gestão de sintomas a partir de dados secundários.
+The historical landscape of the field is described by \citet{Wang2018}, whose
+review of 263~studies evidences the predominance of symbolic systems such as
+cTAKES and MedLEE in the processing of electronic health records. The authors
+demonstrate how adherence to linguistically rule-based approaches was the norm
+until the arrival of machine learning techniques. The consolidation of the
+transition to deep learning models is documented by \citet{Bazoge2023}, in a
+systematic review on the use of NLP in clinical data warehouses (CDWs): the
+authors evidence the migration from symbolic methods to \textit{transformers},
+identifying their applicability in phenotyping and symptom management tasks
+from secondary data.
 
-No domínio específico do Reconhecimento de Entidades Nomeadas (NER)
-biomédico, \citet{Navarro2023} revisaram sistematicamente a literatura
-sobre NER e extração de relações em texto livre médico e concluíram
-que modelos como BERT lideram a extração das categorias ``problemas''
-e ``tratamentos''. Os autores apontam, contudo, a escassez de
-implementações em ambiente clínico real como limitação persistente
-do campo.
+In the specific domain of biomedical Named Entity Recognition (NER),
+\citet{Navarro2023} systematically reviewed the literature on NER and relation
+extraction in free-text medical records and concluded that models such as BERT
+lead in extracting the categories of ``problems'' and ``treatments''. The
+authors point out, however, the scarcity of implementations in real clinical
+settings as a persistent limitation of the field.
 
-A capacidade dos modelos \textit{transformer} em capturar a linguagem
-coloquial do paciente foi demonstrada por \citet{Watabe2025}, que
-desenvolveram e validaram um modelo BERT-CRF para extração de
-sintomas relatados em linguagem cotidiana, alcançando F1-score
-superior a~0,8. O estudo evidencia a necessidade de ajuste fino
-(\textit{fine-tuning}) com dados narrativos autênticos para capturar
-gírias e sutilezas linguísticas presentes na fala do paciente.
-Complementarmente, \citet{Sezgin2023} demonstraram a viabilidade de
-uma abordagem \textit{zero-shot} combinando NER e a ontologia SNOMED~CT
-para identificar sintomas em dados gerados por pacientes
-(\textit{patient-generated health data} -- PGHD), sem necessidade de
-re-treinamento específico, validando a possibilidade de modelos
-pré-treinados traduzirem linguagem leiga em métricas clínicas
-estruturadas.
+The ability of \textit{transformer} models to capture patient colloquial
+language was demonstrated by \citet{Watabe2025}, who developed and validated a
+BERT-CRF model for extracting symptoms reported in everyday language, achieving
+an F1-score above~0.8. The study highlights the need for \textit{fine-tuning}
+with authentic narrative data to capture slang and linguistic nuances present
+in patient speech. Complementarily, \citet{Sezgin2023} demonstrated the
+feasibility of a \textit{zero-shot} approach combining NER and the SNOMED~CT
+ontology to identify symptoms in patient-generated health data (PGHD), without
+specific retraining, validating the possibility of pre-trained models
+translating lay language into structured clinical metrics.
 
-Na intersecção entre NLP e prontuário eletrônico, \citet{Koleck2019}
-sintetizaram a eficácia de algoritmos de classificação para extração
-de sintomas subjetivos -- como dor e alterações de humor -- a partir
-de narrativas em texto livre de EHR, evidenciando a viabilidade
-técnica da extração automatizada mesmo para dimensões de natureza
-subjetiva.
+At the intersection of NLP and electronic health records, \citet{Koleck2019}
+synthesised the efficacy of classification algorithms for extracting subjective
+symptoms -- such as pain and mood changes -- from free-text EHR narratives,
+evidencing the technical feasibility of automated extraction even for
+subjective dimensions.
 
-Em conjunto, os estudos do Eixo~A confirmam a maturidade técnica do
-NLP clínico para extração de entidades biomédicas, com BERT e suas
-variantes estabelecidos como estado da arte. A lacuna transversal
-identificada -- apontada por \citet{Navarro2023}
--- é a distância entre desempenho em ambiente laboratorial e a
-implantação em sistemas clínicos reais, onde privacidade de dados,
-variabilidade linguística e integração com fluxos de trabalho
-assistenciais permanecem desafios não resolvidos.
+Taken together, the studies in Axis~A confirm the technical maturity of
+clinical NLP for biomedical entity extraction, with BERT and its variants
+established as the state of the art. The cross-cutting gap identified --
+highlighted by \citet{Navarro2023} -- is the distance between performance in
+laboratory settings and deployment in real clinical systems, where data
+privacy, linguistic variability and integration with care workflows remain
+unsolved challenges.
 
 % ---------------------------------------------------------------
-\subsection{Eixo B —Documentação clínica automatizada e ASR}
+\subsection{Axis B —Automated clinical documentation and ASR}
 \label{subsec:eixoB}
-% Responsável: Fabrício Evangelista dos Santos
+% Lead: Fabrício Evangelista dos Santos
 % ---------------------------------------------------------------
 
-Os estudos do Eixo~B cobrem o ciclo completo da documentação clínica
-automatizada: do reconhecimento da fala à geração de registros
-estruturados, incluindo os desafios técnicos e os requisitos éticos
-para implantação hospitalar.
+The studies in Axis~B cover the full cycle of automated clinical
+documentation: from speech recognition to the generation of structured
+records, including the technical challenges and ethical requirements for
+hospital deployment.
 
-As bases da documentação automatizada são estabelecidas por
-\citet{Aleksic2017}, cujo modelo de sumarização de prontuários
-eletrônicos demonstra a viabilidade de \textit{dashboards} capazes
-de identificar pacientes que necessitam de atenção especializada,
-validando a síntese legível como estratégia para reduzir a carga
-cognitiva do profissional.
+The foundations of automated documentation are established by
+\citet{Aleksic2017}, whose electronic health record summarisation model
+demonstrates the feasibility of dashboards capable of identifying patients
+requiring specialist attention, validating readable synthesis as a strategy
+to reduce clinician cognitive load.
 
-No domínio específico da geração de notas SOAP, dois estudos abordam
-estratégias complementares. \citet{Schloss2020} utilizaram redes
-Bi-LSTM hierárquicas para classificar enunciados de consultas nas
-seções SOAP com alta precisão, propondo estratégias modulares para
-tratar a ``poluição'' de dados em transcrições automáticas ruidosas.
-\citet{Krishna2021}, por sua vez, propuseram o modelo CLUSTER2SENT,
-baseado em sumarização modular, para gerar notas estruturadas a partir
-de conversas densas entre médico e paciente, facilitando a localização
-de evidências verbais pelo profissional na saída analítica.
+In the specific domain of SOAP note generation, two studies address
+complementary strategies. \citet{Schloss2020} used hierarchical Bi-LSTM
+networks to classify consultation utterances into SOAP sections with high
+accuracy, proposing modular strategies to handle data ``noise'' in automatic
+transcriptions. \citet{Krishna2021}, in turn, proposed the CLUSTER2SENT
+model, based on modular summarisation, to generate structured notes from
+dense physician-patient conversations, facilitating the retrieval of verbal
+evidence by the clinician in the analytical output.
 
-No que diz respeito à transcrição automática, \citet{Klusty2025}
-descreveram um sistema baseado em OpenAI Whisper e PyAnnote operando
-em servidores fechados (\textit{on-premise}), resolvendo
-simultaneamente o desafio da diarização de locutores e os requisitos
-de privacidade para implantação hospitalar. Complementarmente,
-\citet{Tran2023} demonstraram que falhas em pronomes curtos
-(como \enquote{eu} e \enquote{você}) são mais críticas para a
-validade dos indicadores clínicos do que erros em termos médicos
-complexos, alertando para a necessidade de precisão na linguagem
-casual para garantir a qualidade dos dados extraídos.
+With regard to automatic transcription, \citet{Klusty2025} described a system
+based on OpenAI Whisper and PyAnnote operating on closed (\textit{on-premise})
+servers, simultaneously resolving the speaker diarisation challenge and the
+privacy requirements for hospital deployment. Complementarily,
+\citet{Tran2023} demonstrated that errors in short pronouns (such as
+\enquote{I} and \enquote{you}) are more critical for the validity of clinical
+indicators than errors in complex medical terms, highlighting the need for
+accuracy in casual language to ensure the quality of extracted data.
 
-As abordagens baseadas em IA generativa trazem um conjunto distinto
-de exigências métricas. \citet{Abbasian2024} propõem métricas de
-segurança, validade factual (\textit{groundedness}) e empatia como
-indicadores obrigatórios para avaliar conversações em saúde geradas
-por modelos de linguagem, fundamentando a introdução de Geração
-Aumentada por Recuperação (RAG) como mecanismo para ancorar as
-respostas do modelo em fatos extraídos da consulta e mitigar
-alucinações algorítmicas.
+Generative AI-based approaches bring a distinct set of metric requirements.
+\citet{Abbasian2024} propose safety, factual validity
+(\textit{groundedness}) and empathy metrics as mandatory indicators for
+evaluating health conversations generated by language models, grounding the
+introduction of Retrieval-Augmented Generation (RAG) as a mechanism to anchor
+model responses in facts extracted from the consultation and mitigate
+algorithmic hallucinations.
 
-O estado do campo é sintetizado por \citet{vanBuchem2021}, em revisão
-de escopo sobre a implantação de escribas digitais na prática clínica:
-os autores apontam a ausência de estudos prospectivos de usabilidade
-e utilidade clínica real como a lacuna central da área, com a maioria
-das iniciativas ainda restrita a provas de conceito sem validação clínica prospectiva.
+The state of the field is synthesised by \citet{vanBuchem2021}, in a scoping
+review on the deployment of digital scribes in clinical practice: the authors
+point to the absence of prospective usability and real clinical utility studies
+as the central gap in the field, with most initiatives still limited to
+proof-of-concept without prospective clinical validation.
 
-Em conjunto, os estudos do Eixo~B revelam um campo em acelerada
-evolução técnica (com \textit{pipelines} de ASR, diarização e
-geração de notas SOAP progressivamente mais robustos), mas com
-validação clínica prospectiva ainda escassa \citep{vanBuchem2021}.
-A maioria das abordagens direciona o processamento para a automação
-documental, subordinando a análise da qualidade da interação clínica
-à produção do registro estruturado.
+Taken together, the studies in Axis~B reveal a field in rapid technical
+evolution (with ASR, diarisation and SOAP note generation \textit{pipelines}
+progressively more robust), but with prospective clinical validation still
+scarce \citep{vanBuchem2021}. Most approaches direct processing towards
+documentation automation, subordinating the analysis of clinical interaction
+quality to the production of the structured record.
 
 % ---------------------------------------------------------------
-\subsection{Eixo C —Comunicação médico-paciente}
+\subsection{Axis C —Physician-patient communication}
 \label{subsec:eixoC}
-% Responsável: Lucas Kenzo Terazzin Ida
+% Lead: Lucas Kenzo Terazzin Ida
 % ---------------------------------------------------------------
 
-Os estudos do Eixo~C estabelecem a base empírica para a qualidade
-da comunicação profissional-paciente como determinante de desfechos
-clínicos, identificando as dimensões mensuráveis da interação
-terapêutica e as barreiras que comprometem sua efetividade.
+The studies in Axis~C establish the empirical basis for professional-patient
+communication quality as a determinant of clinical outcomes, identifying the
+measurable dimensions of the therapeutic interaction and the barriers that
+compromise its effectiveness.
 
-O impacto da relação clínico-paciente sobre desfechos objetivos de
-saúde é demonstrado pela meta-análise de \citet{Kelley2014}, que
-comprova o efeito significativo das dimensões emocional e cognitiva
-da comunicação sobre resultados clínicos mensuráveis, fornecendo a
-fundamentação teórica para o investimento em métricas automáticas de
-qualidade da relação terapêutica.
+The impact of the clinician-patient relationship on objective health outcomes
+is demonstrated by the meta-analysis of \citet{Kelley2014}, which confirms
+the significant effect of the emotional and cognitive dimensions of
+communication on measurable clinical results, providing the theoretical
+foundation for investing in automatic quality metrics of the therapeutic
+relationship.
 
-No plano da mensuração estruturada, \citet{Shao2025} desenvolveram e
-validaram a escala DPCQ (\textit{Doctor-Patient Communication
-Quality}) de 14~itens, com foco em suporte emocional e educação em
-saúde. As categorias semânticas propostas pelos autores (interação
-emocional versus orientação comportamental) são diretamente
-aplicáveis como alvos para métricas automáticas derivadas da fala.
+In the domain of structured measurement, \citet{Shao2025} developed and
+validated the 14-item DPCQ (\textit{Doctor-Patient Communication Quality})
+scale, focused on emotional support and health education. The semantic
+categories proposed by the authors (emotional interaction versus behavioural
+guidance) are directly applicable as targets for speech-derived automatic
+metrics.
 
-A dimensão da adesão terapêutica em contexto ortopédico é abordada
-por \citet{Rucinski2022}, cuja revisão sistemática demonstra que as
-métricas vigentes falham ao ignorar as barreiras impostas pela equipe
-de saúde e pelo sistema, e não apenas pelo paciente. Os autores
-sustentam a criação de dados auditáveis capazes de mapear falhas
-bilaterais na reabilitação ortopédica, argumento que reforça a
-necessidade de instrumentos de análise da interação, e não apenas
-do comportamento isolado do paciente.
+The dimension of therapeutic adherence in the orthopedic context is addressed
+by \citet{Rucinski2022}, whose systematic review demonstrates that current
+metrics fail by ignoring the barriers imposed by the healthcare team and the
+system, not only by the patient. The authors argue for the creation of
+auditable data capable of mapping bilateral failures in orthopedic
+rehabilitation, an argument that reinforces the need for instruments to
+analyse the interaction, not just the isolated behaviour of the patient.
 
-Em nível microscópico da fala, \citet{McCabe2018} comprovaram que o
-uso de \enquote{autorreparo} por médicos (isto é, a correção
-espontânea de enunciados durante a consulta) prediz adesão superior
-ao tratamento. O achado valida a análise de dinâmicas linguísticas de
-baixo nível como preditores de resultados clínicos, demonstrando que
-marcadores comunicacionais identificáveis automaticamente podem
-carregar valor prognóstico.
+At the microscopic level of speech, \citet{McCabe2018} demonstrated that the
+use of \enquote{self-repair} by physicians (i.e., the spontaneous correction
+of utterances during the consultation) predicts superior treatment adherence.
+The finding validates the analysis of low-level linguistic dynamics as
+predictors of clinical outcomes, demonstrating that automatically identifiable
+communicational markers can carry prognostic value.
 
-O papel da literacia em saúde na comunicação efetiva é analisado por
-\citet{Muscat2020}, que demonstram que a tomada de decisão
-compartilhada exige a construção ativa de habilidades no paciente por
-meio de instrução verbal eficaz, em contraste com o modelo
-informacional passivo. O monitoramento da fala no contexto clínico
-deve, portanto, capturar indicadores do sucesso comunicacional da
-literacia, e não apenas a transferência unilateral de informação.
+The role of health literacy in effective communication is analysed by
+\citet{Muscat2020}, who demonstrate that shared decision-making requires the
+active building of patient skills through effective verbal instruction, in
+contrast with the passive informational model. Speech monitoring in the
+clinical context must therefore capture indicators of communicational literacy
+success, not merely unilateral information transfer.
 
-Contextos de diversidade linguística e cultural introduzem uma camada
-adicional de complexidade. \citet{Alkhamees2023} mapearam como
-disparidades linguísticas e estilos autoritários de condução da
-consulta geram inibição do paciente e comprometem a qualidade das
-decisões clínicas. No contexto diversificado do SUS, essas barreiras
-permanecem frequentemente invisíveis aos gestores, mas
-potencialmente identificáveis por análise automatizada da interação.
+Linguistic and cultural diversity contexts introduce an additional layer of
+complexity. \citet{Alkhamees2023} mapped how linguistic disparities and
+authoritarian consultation styles generate patient inhibition and compromise
+the quality of clinical decisions. In the diverse context of SUS (Brazil's
+National Health System), these barriers often remain invisible to managers,
+but are potentially identifiable through automated interaction analysis.
 
-A propedêutica clínica sistematizada por \citet{Porto2019} organiza
-a anamnese como sequência estruturada de elementos de inquirição,
-definindo os caracteres propedêuticos da queixa: localização,
-intensidade, qualidade, irradiação, fatores desencadeantes e de
-alívio, duração e evolução, como alvos semânticos obrigatórios do
-raciocínio diagnóstico. Essa estrutura constitui a gramática clínica
-da interação verbal: o conjunto de informações que o profissional
-deve elicitar e o paciente deve verbalizar para que a anamnese
-cumpra sua função diagnóstica. Nenhum dos estudos do corpus desta
-revisão cruza o modelo propedêutico com a análise automática da
-interação verbal: os estudos do Eixo~C mensuram a qualidade da
-comunicação em suas dimensões relacionais e cognitivas, mas não
-verificam se os caracteres propedêuticos foram efetivamente
-verbalizados, compreendidos e registrados durante a consulta.
+The clinical propedeutics systematised by \citet{Porto2019} organises the
+anamnesis as a structured sequence of inquiry elements, defining the
+propedeutic characteristics of the complaint -- location, intensity, quality,
+radiation, triggering and relieving factors, duration and evolution -- as
+mandatory semantic targets of diagnostic reasoning. This structure constitutes
+the clinical grammar of verbal interaction: the set of information that the
+clinician must elicit and the patient must verbalise for the anamnesis to
+fulfil its diagnostic function. None of the studies in this review's corpus
+crosses the propedeutic model with automatic analysis of verbal interaction:
+the studies in Axis~C measure communication quality in its relational and
+cognitive dimensions, but do not verify whether the propedeutic characteristics
+were effectively verbalised, understood and recorded during the consultation.
 
-Em conjunto, os estudos do Eixo~C fornecem o mapa do que deve ser
-medido na interação clínica: dimensões emocionais e cognitivas
-\citep{Kelley2014,Shao2025}, marcadores linguísticos de adesão
-\citep{McCabe2018,Rucinski2022}, competências de literacia
-\citep{Muscat2020} e barreiras interculturais \citep{Alkhamees2023}.
-A lacuna que emerge é dupla: nenhum estudo operacionaliza essas
-dimensões como variáveis derivadas automaticamente da fala
-(lacuna tecnológica), e nenhum verifica se os caracteres
-propedêuticos da anamnese \citep{Porto2019} foram elicitados com
-qualidade comunicacional adequada durante a interação real
-(lacuna clínico-metodológica). A mensuração permanece dependente de
-escalas de autorrelato ou observação direta, sem integração com
-\textit{pipelines} de análise acústico-semântica orientados pela
-estrutura clínica da anamnese.
+Taken together, the studies in Axis~C provide the map of what must be measured
+in clinical interaction: emotional and cognitive dimensions
+\citep{Kelley2014,Shao2025}, linguistic adherence markers
+\citep{McCabe2018,Rucinski2022}, health literacy competencies
+\citep{Muscat2020} and intercultural barriers \citep{Alkhamees2023}. The
+emerging gap is twofold: no study operationalises these dimensions as
+automatically speech-derived variables (technological gap), and no study
+verifies whether the propedeutic characteristics of the anamnesis
+\citep{Porto2019} were elicited with adequate communicational quality during
+real interaction (clinical-methodological gap). Measurement remains dependent
+on self-report scales or direct observation, without integration with
+acoustic-semantic analysis \textit{pipelines} guided by the clinical structure
+of the anamnesis.
 
 % ---------------------------------------------------------------
-\subsection{Eixo D —Biomarcadores vocais e análise multimodal}
+\subsection{Axis D —Vocal biomarkers and multimodal analysis}
 \label{subsec:eixoD}
-% Responsável: Fabrício Evangelista dos Santos
+% Lead: Fabrício Evangelista dos Santos
 % ---------------------------------------------------------------
 
-Os estudos do Eixo~D exploram a dimensão acústica e prosódica da
-comunicação clínica, estendendo a análise além do conteúdo semântico
-do texto transcrito para os sinais vocais que acompanham a fala.
+The studies in Axis~D explore the acoustic and prosodic dimension of clinical
+communication, extending the analysis beyond the semantic content of the
+transcribed text to the vocal signals that accompany speech.
 
-\citet{Fagherazzi2021} descrevem o \textit{pipeline} para captura de
-características linguísticas e acústicas, prosódia, qualidade vocal
-e ritmo, que indicam estados de saúde e estados emocionais do
-locutor. Os autores demonstram que sinais derivados diretamente da
-voz podem funcionar como biomarcadores clínicos, fundamentando a
-ideia de que a fala do paciente e do profissional, além de seu
-conteúdo semântico, carrega informação analítica utilizável
-independentemente da transcrição textual.
+\citet{Fagherazzi2021} describe the \textit{pipeline} for capturing linguistic
+and acoustic features -- prosody, vocal quality and rhythm -- that indicate
+health states and emotional states of the speaker. The authors demonstrate
+that signals derived directly from the voice can function as clinical
+biomarkers, grounding the idea that the speech of both patient and clinician,
+beyond its semantic content, carries usable analytical information
+independently of textual transcription.
 
-No domínio da análise de consultas clínicas reais, \citet{Imel2022}
-mapearam valências emocionais a partir de transcrições textuais de
-diálogos médico-paciente por meio de redes neurais sequenciais,
-alcançando concordância com juízes humanos treinados. Embora o estudo
-demonstre que marcadores de valência emocional da interação verbal
-possam ser identificados automaticamente em nível de enunciado com
-confiabilidade comparável à avaliação humana (correlação de 0{,}60),
-os autores ressaltam que o modelo foi treinado e avaliado
-exclusivamente com base no conteúdo textual dos diálogos (diários de
-transcrição), sem processar diretamente o sinal de áudio ou a camada
-acústica.
+In the domain of real clinical consultation analysis, \citet{Imel2022} mapped
+emotional valences from textual transcripts of physician-patient dialogues
+using sequential neural networks, achieving agreement with trained human
+raters. Although the study demonstrates that emotional valence markers of
+verbal interaction can be automatically identified at utterance level with
+reliability comparable to human assessment (correlation of 0.60), the authors
+note that the model was trained and evaluated exclusively on the textual
+content of the dialogues (transcription diaries), without directly processing
+the audio signal or the acoustic layer.
 
-A fronteira não resolvida do Eixo~D é identificada por
-\citet{Albert2024}, em revisão de escopo sobre métodos de IA, fala e
-NLP para avaliação da comunicação clínico-paciente: os autores
-ressaltam a carência de estudos sobre linguagem não verbal, tons de
-voz e silêncios. A maioria das abordagens existentes foca em
-transcrição e análise semântica, negligenciando a camada
-acústico-prosódica como objeto de análise independente. Silêncios,
-pausas e modulações de voz, componentes terapêuticos e relacionais
-da anamnese, permanecem sem método consolidado de extração e
-interpretação automática.
+The unresolved frontier of Axis~D is identified by \citet{Albert2024}, in a
+scoping review on AI, speech and NLP methods for clinician-patient
+communication assessment: the authors highlight the scarcity of studies on
+non-verbal language, voice tones and silences. Most existing approaches focus
+on transcription and semantic analysis, neglecting the acoustic-prosodic layer
+as an independent object of analysis. Silences, pauses and voice modulations --
+therapeutic and relational components of the anamnesis -- remain without a
+consolidated method for automatic extraction and interpretation.
 
-Em conjunto, os estudos do Eixo~D revelam um campo em estado inicial
-de desenvolvimento: os fundamentos técnicos de processamento de voz
-existem \citep{Fagherazzi2021} e há viabilidade no mapeamento de
-marcadores emocionais baseado em transcritos textuais de interações
-reais \citep{Imel2022}, mas a integração multimodal que de fato una
-os aspectos acústicos da voz aos semânticos do texto na comunicação
-clínica permanece incipiente \citep{Albert2024}. Essa lacuna adquire contorno clínico preciso
-quando confrontada com a propedêutica de \citet{Porto2019}: se os
-caracteres propedêuticos da queixa têm correlatos acústico-prosódicos
-na fala (tensão vocal para dor, hesitação e pausas para dúvida,
-desengajamento prosódico para barreiras), nenhum estudo do corpus
-orienta a extração de biomarcadores vocais pela gramática clínica da
-anamnese. A integração entre o modelo propedêutico e o
-\textit{pipeline} acústico-semântico representa a fronteira
-metodológica mais inexplorada desta revisão.
+Taken together, the studies in Axis~D reveal a field in an early stage of
+development: the technical foundations of voice processing exist
+\citep{Fagherazzi2021} and there is feasibility in mapping emotional markers
+based on textual transcripts of real interactions \citep{Imel2022}, but the
+multimodal integration that truly unites the acoustic aspects of voice with
+the semantic aspects of text in clinical communication remains incipient
+\citep{Albert2024}. This gap acquires precise clinical contour when confronted
+with the propedeutics of \citet{Porto2019}: if the propedeutic characteristics
+of the complaint have acoustic-prosodic correlates in speech (vocal tension for
+pain, hesitation and pauses for doubt, prosodic disengagement for barriers),
+no study in the corpus guides the extraction of vocal biomarkers by the
+clinical grammar of the anamnesis. The integration between the propedeutic
+model and the acoustic-semantic \textit{pipeline} represents the most
+unexplored methodological frontier of this review.
 
 %% ================================================================
-\section{Discussão}
+\section{Discussion}
 \label{sec:discussao}
 
 
-\subsection*{Dois eixos paralelos sem convergência sistemática}
+\subsection*{Two parallel axes without systematic convergence}
 
-Os estudos mapeados revelam dois eixos de desenvolvimento que avançam em
-paralelo sem convergência sistemática na literatura.
-O primeiro eixo, formado pelos estudos de NLP clínico (Eixo~A) e de
-documentação automatizada (Eixo~B), trata a fala como insumo para
-documentação: transcreve-se o encontro clínico para gerar notas SOAP,
-identificar entidades biomédicas ou popular campos do prontuário eletrônico
+The mapped studies reveal two lines of development advancing in parallel
+without systematic convergence in the literature.
+The first line, formed by clinical NLP studies (Axis~A) and automated
+documentation studies (Axis~B), treats speech as input for documentation:
+the clinical encounter is transcribed to generate SOAP notes, identify
+biomedical entities or populate electronic health record fields
 \citep{Bazoge2023,vanBuchem2021,Falcetta2023,Ng2025}.
-O segundo eixo, formado pelos estudos de comunicação médico-paciente
-(Eixo~C) e de biomarcadores vocais (Eixo~D), estabelece o que a comunicação
-significa clinicamente e demonstra que sinais acústicos carregam informação
-diagnóstica \citep{Kelley2014,Fagherazzi2021,Albert2024}.
-Nessa tradição, a qualidade da comunicação é operacionalizada por
-instrumentos de autorrelato ou observação presencial, e os biomarcadores
-vocais são aplicados majoritariamente à detecção de estados de saúde
-(doença de Parkinson, depressão, COVID-19), não à dinâmica comunicacional
-durante a consulta.
+The second line, formed by physician-patient communication studies (Axis~C)
+and vocal biomarker studies (Axis~D), establishes what communication means
+clinically and demonstrates that acoustic signals carry diagnostic information
+\citep{Kelley2014,Fagherazzi2021,Albert2024}.
+In this tradition, communication quality is operationalised by self-report
+instruments or in-person observation, and vocal biomarkers are applied
+predominantly to the detection of health states (Parkinson's disease,
+depression, COVID-19), not to the communicational dynamics during the
+consultation.
 
-A heterogeneidade metodológica reflete essa divisão estrutural.
-Estudos de NLP como \citet{Bazoge2023} e
-\citet{Wang2018} empregam pipelines de extração de
-entidades sobre texto retroativo de prontuários; estudos de ASR como
-\citet{vanBuchem2021} e
-\citet{Klusty2025} medem a acurácia de transcrição
-e a redução do tempo de documentação; estudos de comunicação como
-\citet{Shao2025} e \citet{Kelley2014}
-derivam indicadores relacionais por questionários validados.
-Essas tradições compartilham o locus da interação clínica, mas não
-compartilham objetos de mensuração, tornando a síntese quantitativa
-inviável com os estudos do corpus atual.
+The methodological heterogeneity reflects this structural divide.
+NLP studies such as \citet{Bazoge2023} and
+\citet{Wang2018} employ entity extraction pipelines on retrospective
+EHR text; ASR studies such as \citet{vanBuchem2021} and
+\citet{Klusty2025} measure transcription accuracy and documentation time
+reduction; communication studies such as \citet{Shao2025} and
+\citet{Kelley2014} derive relational indicators through validated
+questionnaires. These traditions share the locus of clinical interaction
+but do not share measurement objects, making quantitative synthesis
+unfeasible with the studies in the current corpus.
 
-\subsection*{Lacuna confirmada: a anamnese como objeto de análise}
+\subsection*{Confirmed gap: anamnesis as the object of analysis}
 
-Nenhum estudo do corpus operacionaliza a anamnese como evento clínico
-estruturado para extração automática de marcadores comunicacionais e
-comportamentais derivados da fala.
-A distinção é crítica: a maioria dos estudos trata a interação clínica como
-\emph{meio}, para produzir documentação ou detectar patologias, não como
-\emph{objeto} de análise comunicacional.
-\citet{Krishna2021} e
-\citet{Schloss2020} classificam enunciados pela
-estrutura SOAP, não pela qualidade relacional do encontro.
-\citet{Abbasian2024} avaliam a eficácia de
-conversas geradas por IA generativa, não o comportamento comunicativo do
-profissional de saúde em contexto real.
-\citet{Shao2025} e \citet{McCabe2018} descrevem dimensões relevantes de qualidade
-comunicativa, clareza, empatia, barreiras à compreensão, mas as
-operacionalizam por instrumentos de autorrelato, não por marcadores
-automaticamente extraídos da fala.
+No study in the corpus operationalises the anamnesis as a structured clinical
+event for the automatic extraction of speech-derived communicational and
+behavioural markers.
+The distinction is critical: most studies treat the clinical interaction as a
+\emph{means} -- to produce documentation or detect pathologies -- not as an
+\emph{object} of communicational analysis.
+\citet{Krishna2021} and
+\citet{Schloss2020} classify utterances by SOAP structure, not by the
+relational quality of the encounter.
+\citet{Abbasian2024} evaluate the efficacy of conversations generated by
+generative AI, not the communicative behaviour of the healthcare professional
+in real context.
+\citet{Shao2025} and \citet{McCabe2018} describe relevant dimensions of
+communicative quality -- clarity, empathy, comprehension barriers -- but
+operationalise them through self-report instruments, not through automatically
+extracted speech markers.
 
-A revisão de \citet{Albert2024} é a que mais
-se aproxima da intersecção: mapeia métodos de SA e NLP para avaliação
-da comunicação clínica, mas confirma a escassez de estudos que vinculem
-marcadores acústico-prosódicos a desfechos comunicacionais mensuráveis,
-especialmente em contextos de reabilitação.
-\citet{Porto2019} oferece um referencial semiológico
-preciso para a anamnese ortopédica, incluindo hierarquia de sintomas,
-cronologia e exploração funcional, que poderia orientar a definição
-operacional desses marcadores; no entanto, nenhum estudo recuperado nesta
-revisão integra esse referencial com análise automatizada de fala.
+The review by \citet{Albert2024} is the one that comes closest to this
+intersection: it maps SA and NLP methods for clinical communication assessment,
+but confirms the scarcity of studies linking acoustic-prosodic markers to
+measurable communicational outcomes, particularly in rehabilitation contexts.
+\citet{Porto2019} offers a precise semiological framework for orthopedic
+anamnesis, including symptom hierarchy, chronology and functional exploration,
+which could guide the operational definition of these markers; however, no
+study retrieved in this review integrates that framework with automated
+speech analysis.
 
-\subsection*{Implicações para estudos prospectivos}
+\subsection*{Implications for prospective studies}
 
-A lacuna identificada aponta para um conjunto de requisitos para estudos
-futuros: (i)~gravação de encontros clínicos reais em condições ecológicas;
-(ii)~ASR com modelos ajustados ao Português Brasileiro;
-(iii)~extração de marcadores comunicacionais (expressão de dúvida,
-dor, engajamento, barreiras linguísticas) ancorada no referencial
-semiológico da anamnese \citep{Porto2019}; e
-(iv)~correlação desses marcadores com desfechos de adesão
-e qualidade do cuidado em seguimento longitudinal.
-\citet{BaenaNeto2026} propõem
-exatamente essa integração: um estudo observacional prospectivo em
-consultas de reabilitação ortopédica no SUS, com transcrição via ASR
-(Whisper \citep{Radford2023}) em processamento \emph{on-premise} e
-extração de marcadores para análise longitudinal de desfechos.
-Essa abordagem ancora-se nos repertórios técnicos dos Eixos~A, B e D
-e nos construtos comunicacionais do Eixo~C, integrando-os de forma inédita
-em torno da anamnese como unidade de análise primária.
+The identified gap points to a set of requirements for future studies:
+(i)~recording of real clinical encounters under ecological conditions;
+(ii)~ASR with models fine-tuned to Brazilian Portuguese;
+(iii)~extraction of communicational markers (expression of doubt, pain,
+engagement, linguistic barriers) anchored in the semiological framework of
+the anamnesis \citep{Porto2019}; and
+(iv)~correlation of these markers with adherence outcomes and quality of care
+in longitudinal follow-up.
+\citet{BaenaNeto2026} propose exactly this integration: a prospective
+observational study in orthopedic rehabilitation consultations at SUS
+(Brazil's National Health System), with transcription via ASR
+(Whisper \citep{Radford2023}) in on-premise processing and marker extraction
+for longitudinal outcome analysis.
+This approach is anchored in the technical repertoires of Axes~A, B and D
+and in the communicational constructs of Axis~C, integrating them in an
+unprecedented manner around the anamnesis as the primary unit of analysis.
 
-\subsection*{Limitações desta revisão}
+\subsection*{Limitations of this review}
 
-Esta revisão apresenta quatro limitações centrais.
-Primeiro, embora a busca eletrônica tenha se concentrado no PubMed/MEDLINE como base de dados primária, a inclusão de artigos adicionais via \textit{snowballing} (incluindo revisões sistemáticas relevantes e estudos de referência) visou mitigar a perda de artigos essenciais; contudo, a ausência de buscas automatizadas em outras bases eletrônicas indexadas (como Scopus e Web of Science) permanece como uma limitação para a generalização completa da literatura.
-Segundo, há viés de idioma: a literatura mapeada é predominantemente em inglês, com sub-representação de estudos conduzidos no contexto de saúde brasileiro e em Português, o que pode subestimar iniciativas locais de Speech Analytics aplicadas ao SUS.
-Terceiro, a seleção de filtros de busca na base primária, como a exigência de texto completo gratuito (\textit{free full text}), pode ter excluído estudos relevantes protegidos por paywall ou restrições de assinatura de periódicos.
-Quarto, a heterogeneidade de tipo de estudo, que inclui revisões sistemáticas, estudos empíricos, preprints e modelos conceituais, impede a realização de uma síntese quantitativa ou meta-análise estruturada, limitando também as comparações diretas de qualidade metodológica entre as abordagens.
+This review presents four central limitations.
+First, although the electronic search was concentrated in PubMed/MEDLINE as
+the primary database, the inclusion of additional articles via
+\textit{snowballing} (including relevant systematic reviews and reference
+studies) aimed to mitigate the loss of essential articles; however, the
+absence of automated searches in other indexed electronic databases (such as
+Scopus and Web of Science) remains a limitation for full generalisation of
+the literature.
+Second, there is a language bias: the mapped literature is predominantly in
+English, with under-representation of studies conducted in the Brazilian
+health context and in Portuguese, which may underestimate local Speech
+Analytics initiatives applied to SUS.
+Third, the selection of search filters in the primary database, such as the
+requirement of free full text, may have excluded relevant studies protected
+by paywall or journal subscription restrictions.
+Fourth, the heterogeneity of study type -- including systematic reviews,
+empirical studies, preprints and conceptual models -- prevents the conduct of
+a quantitative synthesis or structured meta-analysis, also limiting direct
+comparisons of methodological quality between approaches.
 
-\subsection*{Considerações éticas}
+\subsection*{Ethical considerations}
 
-A aplicação de Speech Analytics em consultas clínicas levanta questões
-éticas que extrapolam as considerações padrão para pesquisa com seres
-humanos.
-A voz constitui dado biométrico sensível nos termos da Lei Geral de
-Proteção de Dados Pessoais (LGPD, Lei nº~13.709/2018), impondo obrigações
-de minimização da coleta, pseudonimização, separação entre base identificada
-e base analítica, e controle de acesso restrito.
-A pesquisa deve ser conduzida em conformidade com a Resolução
-CNS nº~466/2012 \citep{CNS466_2012} e a Resolução CNS nº~510/2016
-\citep{CNS510_2016}, e com a Lei nº~14.874/2024 \citep{Lei14874_2024},
-que atualiza o marco regulatório da pesquisa clínica no Brasil.
-O Termo de Consentimento Livre e Esclarecido (TCLE) é obrigatório
-para a gravação de voz e não admite dispensa quando a fala constitui o
-próprio objeto de análise.
+The application of Speech Analytics in clinical consultations raises ethical
+questions that go beyond standard human research considerations.
+Voice constitutes sensitive biometric data under the terms of the General
+Personal Data Protection Law (LGPD, Law No.~13.709/2018), imposing
+obligations of data minimisation, pseudonymisation, separation between
+identified and analytical datasets, and restricted access control.
+Research must be conducted in compliance with CNS Resolution
+No.~466/2012 \citep{CNS466_2012} and CNS Resolution No.~510/2016
+\citep{CNS510_2016}, and with Law No.~14.874/2024 \citep{Lei14874_2024},
+which updates the regulatory framework for clinical research in Brazil.
+The Free and Informed Consent Form (TCLE) is mandatory for voice recording
+and cannot be waived when speech itself constitutes the object of analysis.
 
-Do ponto de vista técnico, \citet{Klusty2025}
-demonstram que o processamento \emph{on-premise} é viável em ambiente
-hospitalar e representa a solução mais adequada à privacidade, eliminando
-o envio de dados sensíveis a servidores externos.
-Essa abordagem alinha-se aos cinco princípios para IA responsável
-propostos por \citet{Floridi2018} (beneficência,
-não-maleficência, autonomia, justiça e explicabilidade), e às
-recomendações internacionais da OCDE \citep{OECD2024} e da
-Organização Mundial da Saúde \citep{WHO2024} para governança ética de
-modelos de IA de grande escala em saúde.
-O protocolo de pesquisa deve, ademais, explicitar a proibição de uso
-dos marcadores extraídos para decisão clínica autônoma, preservando o
-papel decisório do profissional de saúde e a autonomia informada do
-paciente.
+From a technical standpoint, \citet{Klusty2025}
+demonstrate that on-premise processing is feasible in a hospital environment
+and represents the most appropriate solution for privacy, eliminating the
+transmission of sensitive data to external servers.
+This approach aligns with the five principles for responsible AI proposed by
+\citet{Floridi2018} (beneficence, non-maleficence, autonomy, justice and
+explicability), and with the international recommendations of the OECD
+\citep{OECD2024} and the World Health Organization \citep{WHO2024} for
+ethical governance of large-scale AI models in healthcare.
+The research protocol must also explicitly prohibit the use of extracted
+markers for autonomous clinical decision-making, preserving the
+decision-making role of the healthcare professional and the informed autonomy
+of the patient.
 
 %% ================================================================
-\section{Conclusão}
+\section{Conclusion}
 \label{sec:conclusao}
 
-Esta scoping review mapeou o estado da arte em Speech Analytics e
-comunicação clínica com o objetivo de estabelecer a fundamentação
-científica para estudos prospectivos que integrem análise automatizada
-da fala à avaliação da qualidade comunicacional em contextos de
-reabilitação ortopédica.
+This scoping review mapped the state of the art in Speech Analytics and
+clinical communication with the aim of establishing the scientific foundation
+for prospective studies that integrate automated speech analysis with the
+assessment of communicational quality in orthopedic rehabilitation contexts.
 
-Os quatro eixos temáticos evidenciam avanços consolidados em NLP clínico
-e ASR: pipelines de extração de entidades biomédicas alcançam desempenho
-competitivo em prontuários eletrônicos \citep{Bazoge2023,Koleck2019},
-modelos de reconhecimento de fala como o Whisper \citep{Radford2023}
-viabilizam a transcrição de encontros clínicos em ambiente hospitalar
-\citep{Klusty2025,Ng2025}, e biomarcadores vocais demonstram capacidade
-de capturar estados fisiológicos e emocionais relevantes para o cuidado
-em saúde \citep{Fagherazzi2021,Albert2024}.
-A literatura de comunicação médico-paciente, por sua vez, estabelece
-com consistência que a qualidade relacional do encontro clínico influencia
-a adesão terapêutica e os desfechos de saúde \citep{Kelley2014,Rucinski2022}.
+The four thematic axes evidence consolidated advances in clinical NLP and ASR:
+biomedical entity extraction \textit{pipelines} achieve competitive performance
+in electronic health records \citep{Bazoge2023,Koleck2019}, speech recognition
+models such as Whisper \citep{Radford2023} enable the transcription of clinical
+encounters in hospital settings \citep{Klusty2025,Ng2025}, and vocal
+biomarkers demonstrate the capacity to capture physiological and emotional
+states relevant to healthcare \citep{Fagherazzi2021,Albert2024}.
+The physician-patient communication literature, in turn, consistently
+establishes that the relational quality of the clinical encounter influences
+therapeutic adherence and health outcomes \citep{Kelley2014,Rucinski2022}.
 
-No entanto, a revisão confirma uma lacuna consistente e específica:
-poucos estudos operacionalizam interações clínicas como fonte de
-variáveis mensuráveis derivadas da fala, especialmente marcadores
-comunicacionais e comportamentais (expressão de dúvida, dor, engajamento,
-barreiras à compreensão) extraídos automaticamente durante a anamnese
-como evento estruturado.
-A maioria das iniciativas trata a fala como insumo para documentação ou
-como sinal para detecção de patologias, sem ancorar a análise no
-referencial semiológico da anamnese \citep{Porto2019}, que define
-o que, na fala, é clinicamente significativo do ponto de vista
-comunicacional.
+However, the review confirms a consistent and specific gap: few studies
+operationalise clinical interactions as a source of speech-derived measurable
+variables, particularly communicational and behavioural markers (expression of
+doubt, pain, engagement, comprehension barriers) automatically extracted
+during the anamnesis as a structured event.
+Most initiatives treat speech as input for documentation or as a signal for
+pathology detection, without anchoring the analysis in the semiological
+framework of the anamnesis \citep{Porto2019}, which defines what, in speech,
+is clinically significant from a communicational standpoint.
 
-Esta lacuna aponta para a necessidade de estudos prospectivos que integrem
-Speech Analytics à análise estruturada da comunicação clínica para
-monitoramento de adesão e qualidade do cuidado em tempo real.
-Tais estudos requerem, além de infraestrutura técnica adequada, um
-protocolo ético robusto que trate a voz como dado biométrico sensível,
-garanta o consentimento informado e preserve a privacidade dos pacientes
-por meio de processamento local dos dados.
-O protocolo metodológico descrito em \citet{BaenaNeto2026} representa uma resposta direta a esse
-conjunto de requisitos no contexto do Sistema Único de Saúde.
+This gap points to the need for prospective studies that integrate Speech
+Analytics with structured analysis of clinical communication for real-time
+adherence monitoring and quality of care.
+Such studies require, in addition to adequate technical infrastructure, a
+robust ethical protocol that treats voice as sensitive biometric data, ensures
+informed consent and preserves patient privacy through local data processing.
+The methodological protocol described in \citet{BaenaNeto2026} represents a
+direct response to this set of requirements in the context of SUS (Brazil's
+National Health System).
 
 %% ================================================================
-\section*{Declarações}
+\section*{Declarations}
 
-\subsection*{Financiamento}
-Este estudo não recebeu financiamento de agências de fomento ou entidades
-dos setores público, comercial ou sem fins lucrativos.
-Os custos de processamento do artigo (APC) são dispensados para o autor
-correspondente, afiliado à Universidade São Francisco (USF, Bragança
-Paulista, SP, Brasil), ao abrigo do Acordo de Acesso Aberto firmado entre
-a Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES)
-e a Elsevier para o período 2026--2028
-(\textit{Read \& Publish Agreement}).
+\subsection*{Funding}
+This study received no funding from funding agencies or entities from the
+public, commercial or non-profit sectors.
+Article processing charges (APC) are waived for the corresponding author,
+affiliated with Universidade São Francisco (USF, Bragança Paulista, SP,
+Brazil), under the Open Access Agreement signed between the Coordination for
+the Improvement of Higher Education Personnel (CAPES) and Elsevier for the
+period 2026--2028 (\textit{Read \& Publish Agreement}).
 
-\subsection*{Conflito de interesses}
-Nenhum dos autores possui vínculo de emprego, consultoria, participação
-acionária, honorários, patentes ou financiamento por entidades com
-interesse comercial ou institucional no tema desta revisão.
-O protocolo de estudo prospectivo citado no texto
-\citep{BaenaNeto2026} é de autoria parcial do autor correspondente
-(R.B.N.) e do coautor sênior (V.I.B.S.); essa relação é integralmente
-divulgada pela lista de autoria e não constitui conflito de interesses
-nos termos das diretrizes do ICMJE\@.
+\subsection*{Conflict of interest}
+None of the authors has employment, consultancy, equity, honoraria, patents
+or funding ties to entities with commercial or institutional interest in the
+topic of this review.
+The prospective study protocol cited in the text \citep{BaenaNeto2026} is
+co-authored by the corresponding author (R.B.N.) and the senior co-author
+(V.I.B.S.); this relationship is fully disclosed in the author list and does
+not constitute a conflict of interest under ICMJE guidelines.
 
-\subsection*{Aprovação ética}
-Não aplicável. Este estudo consiste em uma revisão bibliográfica baseada
-exclusivamente em literatura científica publicada e acessível ao público.
-Não foram coletados dados primários, não foram recrutados participantes e
-nenhuma intervenção foi realizada sobre seres humanos.
-Nos termos da Resolução CNS nº~510/2016 \citep{CNS510_2016}, pesquisas
-que utilizam informações de domínio público estão dispensadas de registro e
-avaliação pelo sistema CEP/CONEP\@.
+\subsection*{Ethical approval}
+Not applicable. This study consists of a scoping review based exclusively on
+published and publicly accessible scientific literature. No primary data were
+collected, no participants were recruited, and no intervention was performed
+on human subjects.
+Under the terms of CNS Resolution No.~510/2016 \citep{CNS510_2016}, studies
+using public domain information are exempt from registration and assessment
+by the CEP/CONEP system.
 
-\subsection*{Disponibilidade de dados}
-Os dados que suportam os achados desta revisão estão disponíveis da
-seguinte forma:
-(i)~as \textbf{strings completas de busca} por base de dados estão
-registradas no arquivo suplementar~S1 e no repositório público do projeto
+\subsection*{Data availability}
+The data supporting the findings of this review are available as follows:
+(i)~the \textbf{complete search strings} per database are registered in
+supplementary file~S1 and in the project's public repository
 (\url{https://doi.org/10.5281/zenodo.20821063});
-(ii)~o \textbf{formulário de extração de dados} padronizado (campos
-extraídos por estudo, incluindo autores, ano, delineamento, população,
-tecnologia utilizada, desfechos e avaliação de qualidade metodológica)
-está disponível como material suplementar~S2;
-(iii)~as \textbf{decisões de triagem} (inclusão/exclusão por título,
-resumo e texto completo), com os respectivos motivos de exclusão,
-foram registradas na plataforma Rayyan \citep{Ouzzani2016} e são
-disponibilizadas mediante solicitação ao autor correspondente;
-(iv)~a \textbf{lista completa de estudos incluídos}, com classificação
-por eixo temático e pontuação de qualidade, integra a Tabela~\ref{tab:estudos}
-no corpo do artigo.
-Os dados brutos de gravações, transcrições ou registros de pacientes
-não se aplicam a este estudo, que se baseia exclusivamente em literatura
-publicada.
+(ii)~the \textbf{standardised data extraction form} (fields extracted per
+study, including authors, year, study design, population, technology used,
+outcomes and methodological quality assessment) is available as supplementary
+material~S2;
+(iii)~\textbf{screening decisions} (inclusion/exclusion by title, abstract
+and full text), with the respective reasons for exclusion, were recorded in
+the Rayyan platform \citep{Ouzzani2016} and are made available upon request
+to the corresponding author;
+(iv)~the \textbf{complete list of included studies}, with classification by
+thematic axis and quality score, is incorporated in Table~\ref{tab:estudos}
+in the body of the article.
+Raw data from recordings, transcriptions or patient records do not apply to
+this study, which is based exclusively on published literature.
 
-\subsection*{Uso de inteligência artificial}
-Em conformidade com a Política de IA Generativa da Elsevier, os autores
-declaram que os seguintes modelos de inteligência artificial foram
-utilizados na preparação deste trabalho:
+\subsection*{Use of artificial intelligence}
+In accordance with Elsevier's Generative AI Policy, the authors declare that
+the following artificial intelligence models were used in the preparation of
+this work:
 (i)~\textbf{Claude Sonnet~4.6} (Anthropic PBC,
-\url{https://claude.ai}, 2025--2026), empregado como assistente nas buscas
-bibliográficas nas bases de dados eletrônicas;
+\url{https://claude.ai}, 2025--2026), used as an assistant in literature
+searches in electronic databases;
 (ii)~\textbf{Claude Code} (Anthropic PBC,
-\url{https://claude.ai/code}, 2026), utilizado para apoio à triagem do
-corpus, extração de dados e tradução de trechos de artigos consultados em
-idioma estrangeiro.
-Todo o conteúdo intelectual, as análises, as sínteses e as conclusões
-são de responsabilidade exclusiva dos autores, que revisaram e validaram
-integralmente todo o material descrito produzido com auxílio de IA\@.
+\url{https://claude.ai/code}, 2026), used to support corpus screening, data
+extraction and translation of excerpts from articles consulted in a foreign
+language.
+All intellectual content, analyses, syntheses and conclusions are the sole
+responsibility of the authors, who fully reviewed and validated all material
+described that was produced with AI assistance.
 
 \printcredits
 
