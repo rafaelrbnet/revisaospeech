@@ -17,3 +17,7 @@ $RECYCLE.BIN/
 # Python
 __pycache__/
 *.pyc
+
+# Compiled manuscript outputs (regenerate from .tex source)
+main_blind.docx
+main_blind.pdf
