@@ -72,17 +72,19 @@ A revisão sistemática deve estabelecer o estado da arte e confirmar a lacuna q
 
 | Etapa | n | Status |
 |-------|---|--------|
-| Registros identificados (bases eletrônicas) | ≈686 (PubMed=8 exato; demais estimados) | Parcial — ver `contexto/busca.md` |
-| Registros de fontes adicionais (BaseCitacoes.md) | 22 | Corpus inicial disponível |
-| Após remoção de duplicatas | [N] | Aguarda buscas institucionais (Murilo) |
-| Triagem por título/resumo | [N] | Aguarda Gate 2 |
-| Excluídos na triagem | [N] | — |
-| Leitura completa | [N] | — |
-| Excluídos após leitura completa | [N] | — |
-| Incluídos na síntese qualitativa | [N] | — |
-| Incluídos na síntese quantitativa | [N] | — |
+| Registros identificados (bases eletrônicas) | 5.621 | Final (busca expandida 2026) |
+| Registros de fontes adicionais (Snowballing) | 7 | Final — Rastreamento manual piloto |
+| Após remoção de duplicatas | 3.189 | Final (2.432 duplicatas removidas) |
+| Triagem por título | 3.189 | Final (Triagem por dois revisores independentes) |
+| Excluídos na triagem por título | 2.680 | Final |
+| Triagem por resumo | 509 | Final (Triagem por dois revisores independentes) |
+| Excluídos na triagem por resumo | 474 | Final |
+| Leitura completa (Texto completo avaliado) | 42 | 35 bases + 7 snowballing |
+| Excluídos após leitura completa | 18 | Final (bases); 0 (snowballing) |
+| Incluídos na síntese qualitativa | 24 | Final piloto (17 bases + 7 snowballing) |
+| Incluídos na síntese quantitativa | 0 | Não aplicável (síntese narrativa) |
 
-**Fonte de verdade para contagens:** `contexto/busca.md` — atualizar lá primeiro, depois aqui.
+**Fonte de verdade para contagens:** `contexto/busca.md` — atualizado.
 
 ---
 

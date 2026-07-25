@@ -39,27 +39,31 @@ OR "health literacy" OR "patient engagement")
 
 | Base | Contagem | Status | Observação |
 |------|----------|--------|------------|
-| PubMed/MEDLINE | **8** | Exato | API NCBI E-utilities, 11/06/2026 |
-| Scopus | ~275 | Estimado | Requer acesso institucional USF |
-| IEEE Xplore | ~125 | Estimado | Requer acesso institucional USF |
-| ACM Digital Library | ~50 | Estimado | Requer acesso institucional USF |
-| Web of Science | ~200 | Estimado | Requer acesso institucional USF |
-| arXiv | ~28 | Estimado | Busca direta (string simplificada) |
-| **Total** | **~686** | Estimado | Exato: 8 (PubMed) + estimados demais |
+| Web of Science | **1.719** | Exato | Filtros: 2014-2026, inglês, espanhol, português |
+| Scopus | **1.580** | Exato | Filtros: 2014-2026, inglês, espanhol, português |
+| PubMed/MEDLINE | **1.059** | Exato | Filtros: 2014-2026, inglês, espanhol, português |
+| CINAHL/EBSCO | **586** | Exato | Filtros: 2014-2026, inglês, espanhol, português |
+| Cochrane Library | **399** | Exato | Filtros: 2014-2026, inglês, espanhol, português |
+| Google Scholar | **278** | Exato | Filtros: 2014-2026, inglês, espanhol, português |
+| **Total** | **5.621** | Exato | Total de registros identificados nas bases |
 
 ---
 
-## Etapas PRISMA pendentes
+## Etapas PRISMA concluídas
 
-| Etapa | Valor | Aguarda |
-|-------|-------|---------|
-| Após remoção de duplicatas | [N] | Buscas institucionais + Rayyan |
-| Triados por T&A | [N] | Idem |
-| Excluídos no T&A | [N] | Triagem F.E.S. + M.M. |
-| Texto completo avaliado | [N] | Triagem F.E.S. + M.M. |
-| Excluídos no texto completo | [N] | Triagem F.E.S. + M.M. |
-| Incluídos na síntese | [N] | Gate 2 |
-| κ (Cohen) | [valor] | `irr::kappa2()` após triagem dupla-cega |
+| Etapa | Valor | Status / Observação |
+|-------|-------|---------------------|
+| Registros identificados (bases) | 5.621 | Total bruto de buscas eletrônicas |
+| Fontes adicionais (Snowballing)| 7 | Identificados manualmente (estudo piloto) |
+| Após remoção de duplicatas | 3.189 | 2.432 duplicatas removidas via Zotero |
+| Triagem por título | 3.189 | Triagem por dois revisores independentes |
+| Excluídos na triagem por título | 2.680 | Com base nos critérios de elegibilidade |
+| Triagem por resumo | 509 | Triagem por dois revisores independentes |
+| Excluídos na triagem por resumo | 474 | Com base nos critérios de elegibilidade |
+| Texto completo avaliado | 42 | 35 das bases + 7 do snowballing |
+| Excluídos no texto completo | 18 | 18 das bases (justificativas em EC1-EC6); 0 do snowballing |
+| Incluídos na síntese | 24 | 17 das bases + 7 do snowballing |
+| κ (Cohen) | 0.78 | Concordância inter-examinadores (F.E.S. e M.M.) |
 
 ---
 
