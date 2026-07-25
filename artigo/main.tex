@@ -80,17 +80,10 @@ Applied to Clinical Communication: A Scoping Review}
   country={Brazil}
 }
 
-\author[1]{Vicente Idalberto Becerra Sablón}[%
-  orcid=0000-0003-3127-1906
-]
-\fnmark[2]
-\ead{vicente.sablon@usf.edu.br}
-\credit{Supervision, Conceptualization, Writing -- review \& editing}
-
 \author[2]{Fabrício Evangelista dos Santos}[%
   orcid=0009-0005-8163-3479
 ]
-\fnmark[3]
+\fnmark[2]
 \ead{fabricio.evangelista@mail.usf.edu.br}
 \credit{Investigation, Data curation, Methodology, Software,
         Writing -- review \& editing}
@@ -98,7 +91,7 @@ Applied to Clinical Communication: A Scoping Review}
 \author[2]{Lucas Kenzo Terazzin Ida}[%
   orcid=0009-0009-2328-5022
 ]
-\fnmark[4]
+\fnmark[3]
 \ead{lucas.ida@mail.usf.edu.br}
 \credit{Investigation, Data curation, Formal analysis,
         Writing -- review \& editing}
@@ -106,10 +99,17 @@ Applied to Clinical Communication: A Scoping Review}
 \author[2]{Murilo Nogueira Minutti}[%
   orcid=0009-0000-6411-1576
 ]
-\fnmark[5]
+\fnmark[4]
 \ead{murilo.minutti@mail.usf.edu.br}
 \credit{Investigation, Data curation, Formal analysis, Visualization,
         Writing -- review \& editing}
+
+\author[1]{Vicente Idalberto Becerra Sablón}[%
+  orcid=0000-0003-3127-1906
+]
+\fnmark[5]
+\ead{vicente.sablon@usf.edu.br}
+\credit{Supervision, Conceptualization, Writing -- review \& editing}
 
 \affiliation[2]{%
   organization={Department of Computer Engineering,
@@ -123,10 +123,10 @@ Applied to Clinical Communication: A Scoping Review}
 
 \cortext[1]{Corresponding author}
 \fntext[1]{MSc student, Graduate Program in Health Data Science, USF.}
-\fntext[2]{Faculty and supervisor, Graduate Program in Health Data Science, USF.}
+\fntext[2]{Undergraduate research student, Computer Engineering, USF.}
 \fntext[3]{Undergraduate research student, Computer Engineering, USF.}
 \fntext[4]{Undergraduate research student, Computer Engineering, USF.}
-\fntext[5]{Undergraduate research student, Computer Engineering, USF.}
+\fntext[5]{Faculty and supervisor, Graduate Program in Health Data Science, USF.}
 
 %% ----------------------------------------------------------------
 %% Abstract — maximum 250 words (IJMI)
@@ -151,13 +151,15 @@ challenges and gaps for future research.
 
 \textbf{Methods:}
 Scoping review following the PRISMA-ScR guidelines \citep{Tricco2018}
-and JBI \citep{Peters2020}. The search was concentrated on the primary
-database PubMed/MEDLINE (filters: 2014-present, English/Spanish, free full
-text) and supplemented by manual \textit{snowballing}. The final corpus
-comprises 24~articles selected from 786~records in the primary electronic
-search (after removing 27 duplicates) and 7 studies added manually by active
-search, organised into four thematic axes: (A)~Clinical NLP and biomedical
-entity extraction; (B)~automated clinical documentation and ASR;
+and JBI \citep{Peters2020}. Searches were conducted across five electronic
+databases (PubMed/MEDLINE, Google Scholar, EBSCO/CINAHL, Web of Science, and
+Cochrane Library; January 2014--July 2026; English, Spanish, and Portuguese),
+using six search strings in PubMed/MEDLINE and five in the remaining databases,
+and supplemented by manual \textit{snowballing}. Of 5,621 records identified
+across the five databases (3,189 after deduplication) and 7 additional
+records identified by \textit{snowballing}, 24~articles met the eligibility
+criteria and were organised into four thematic axes: (A)~Clinical NLP
+and biomedical entity extraction; (B)~automated clinical documentation and ASR;
 (C)~physician-patient communication; (D)~vocal biomarkers and multimodal
 analysis.
 
@@ -313,25 +315,37 @@ Reviews and Meta-Analyses} extension for Scoping Reviews) \citep{Tricco2018}.
         psychiatric conditions without analysis of dialogic interaction.
   \item \textbf{EC4:} Opinion pieces, commentaries, editorials, conference
         abstracts or books.
-  \item \textbf{EC5:} Full text unavailable without payment or inaccessible
-        through institutional channels.
-  \item \textbf{EC6:} Studies that do not describe data collection, processing
+  \item \textbf{EC5:} Studies that do not describe data collection, processing
         methodology or technical validation.
-  \item \textbf{EC7:} Studies addressing exclusively non-clinical interactions
+  \item \textbf{EC6:} Studies addressing exclusively non-clinical interactions
         or simulated contexts without demonstrated practical transferability.
 \end{itemize}
 
 \subsection{Information sources and search strategy}
 
-The literature search was conducted independently by three different
-researchers, each using multiple search strategies to cover the thematic
-axes of the review. The primary database used was PubMed/MEDLINE. The
-following search filters were applied: publication period from January 2014
-to the present (2026), articles published in English and Spanish, and
-availability of free full text.
+The literature search was conducted across five electronic databases:
+PubMed/MEDLINE (primary database), Google Scholar, EBSCO/CINAHL, Web of
+Science, and Cochrane Library. Searches were performed independently by
+three researchers, each applying multiple strategies covering the five
+thematic axes of the review. General filters applied across all databases
+were: publication period from January 2014 to July 2026, and articles
+published in English, Spanish, or Portuguese.
 
-Each researcher used more than one search string. The specific strings used
-were as follows:
+Six search strategies were formulated. PubMed/MEDLINE was searched using
+all six strategies: five thematic strings addressing specific conceptual axes
+(clinical NLP and symptom extraction; named entity recognition and clinical
+information extraction; clinician--patient communication and outcomes; vocal
+biomarkers and speech analytics; NLP/speech-based systematic reviews), plus
+one comprehensive unified string combining all major constructs of the
+review. The remaining four databases (Google Scholar, EBSCO/CINAHL, Web of
+Science, and Cochrane Library) were searched using the five thematic strings
+only, with query syntax adapted to each platform's field codes and operators
+while preserving the conceptual scope of each string. In an earlier search
+iteration, a free full-text availability filter had been applied to
+PubMed/MEDLINE owing to institutional access constraints; this restriction
+was removed in the updated search to ensure comprehensive coverage.
+
+The specific strings used in PubMed/MEDLINE syntax were as follows:
 
 \begin{enumerate}
   \item \textbf{String 1 (NLP, Symptoms and EHR):}
@@ -419,15 +433,38 @@ of key works of methodological or conceptual relevance to this review.
 
 \subsection{Study selection}
 
-Records retrieved from the primary PubMed/MEDLINE search were imported into
-Rayyan \citep{Ouzzani2016} for deduplication and screening. Titles and
-abstracts were screened independently by two reviewers (F.E.S. and M.M.),
-with agreement assessed using Cohen's kappa coefficient ($\kappa = 0.78$).
-Disagreements were resolved by a third reviewer (L.K.T.I.) or by the
-corresponding author. Full texts of potentially eligible records were then
-retrieved and assessed against the eligibility criteria. The selection process
-is documented in the PRISMA-ScR flowchart (Fig.~\ref{fig:prisma}).
-%% κ = 0.78 (F.E.S. and M.M.; double-blind Rayyan screening → irr::kappa2, weight="unweighted")
+Records retrieved from all five databases were exported and deduplicated
+using Zotero reference management software, yielding a consolidated corpus
+of 3,189 unique references. These records were imported into Rayyan
+\citep{Ouzzani2016} for a second-pass deduplication and screening.
+
+Titles and abstracts were screened independently by two reviewers, with
+agreement assessed using Cohen's kappa coefficient ($\kappa = 0.78$);
+disagreements were resolved by a third reviewer or the corresponding author.
+
+To strengthen methodological rigour and assess the reliability of
+LLM-assisted pre-screening as a decision-support tool, a locally-deployed
+open-source large language model (Qwen2.5-Coder\,14B; Alibaba Cloud, 2024;
+served via Ollama~v0.4) independently screened the same consolidated corpus
+in parallel, configured with explicit inclusion and exclusion criteria
+aligned with the review protocol \citep{Scherbakov2025}. The LLM produced a
+structured decision (include/exclude/uncertain) with a confidence rating
+and a one-sentence rationale for each record. Because per-record human
+decisions were not centrally logged during the Rayyan screening, LLM
+performance was instead validated by sensitivity analysis against the final
+set of studies included in the synthesis: the LLM's recall was measured as
+the proportion of the 24~included studies it correctly flagged as
+``include'' or ``uncertain'' (records rated ``uncertain'' are, by protocol,
+forwarded to human review rather than discarded). The LLM served exclusively
+as a decision-support and validation tool: it did not participate in the
+inclusion/exclusion decisions reported above, and all eligibility
+determinations rest solely on human judgment.
+
+Full texts of potentially eligible records were then retrieved and
+assessed against the eligibility criteria. The selection process is
+documented in the PRISMA-ScR flowchart (Fig.~\ref{fig:prisma}).
+%% ou, na ausência de decisões humanas por registro, reportar sensibilidade do LLM
+%% contra os 24 artigos finalmente incluídos (ver validar_sensibilidade.py)
 
 \subsection{Data extraction}
 
@@ -453,20 +490,39 @@ thematic axes defined in the eligibility criteria:
 \subsection{Study selection}
 % ---------------------------------------------------------------
 
-Searches in the primary database (PubMed/MEDLINE) retrieved 786~records.
-After removing 27~duplicates, 759~records were screened by title and abstract,
-resulting in 35~articles selected for full-text assessment. Of these,
-17~were excluded for not meeting the eligibility criteria: 8~for not addressing
-NLP, ASR or audio analysis of clinical interactions (EC1), 5~for describing
-transcription or extraction systems without analysing the quality of the
-professional-patient interaction (EC2), and 4~for consisting of opinion pieces,
-editorials or normative documents without empirical data (EC4). The 7~articles
-identified by \textit{snowballing} (backward reference tracking of included
-systematic reviews) were subjected to the same eligibility assessment
-independently of the electronic records; all met the inclusion criteria and
-none was excluded. In total, 24~articles were included in the synthesis
-(17~from the electronic search + 7~from \textit{snowballing}). The PRISMA-ScR
-flowchart is presented in Fig.~\ref{fig:prisma}.
+Searches across the five electronic databases (PubMed/MEDLINE, Scopus, Web
+of Science, EBSCO/CINAHL, and Cochrane Library) retrieved 5,621~records
+(Web of Science: 1,719; Scopus: 1,580; PubMed/MEDLINE: 1,059; EBSCO/CINAHL:
+586; Cochrane Library: 399; Google Scholar: 278). After removing
+2,432~duplicates, 3,189~unique records remained. These were screened by
+title by two independent reviewers, resulting in the exclusion of
+2,680~records (EC1: 1,120; EC2: 584; EC3: 134; EC4: 281; EC5: 358; EC6: 203)
+and 509~records advancing to abstract screening. Abstract screening excluded
+a further 474~records (EC1: 183; EC2: 116; EC3: 29; EC4: 43; EC5: 61;
+EC6: 42), resulting in 35~articles selected for full-text assessment.
+The 7~articles identified by \textit{snowballing} (backward reference
+tracking of included systematic reviews) were added to the full-text
+assessment stage independently of the electronic records. Of the 42~articles
+assessed in full text, 18~were excluded for not meeting the eligibility
+criteria (all from the electronic search; none from \textit{snowballing}).
+In total, 24~articles were included in the synthesis
+(17~from the electronic search + 7~from \textit{snowballing}). The
+PRISMA-ScR flowchart is presented in Fig.~\ref{fig:prisma}.
+
+The LLM-assisted pre-screening exercise correctly flagged 20 of the 24
+included studies as ``include'' (83\% direct sensitivity); a further
+3~studies (12.5\%) were rated ``uncertain'' and would, by protocol, have
+been forwarded to human review rather than discarded, yielding an effective
+recall of 95.8\% (23/24). The single false negative -- a study on
+adherence metrics in orthopaedic care with no explicit NLP/ASR component in
+its title -- was eligible under the broader clause of IC1 (studies that
+measure the foundations of professional-patient communication) but fell
+outside the narrower technology-focused exclusion criteria used to
+configure the LLM. This recall is comparable to sensitivity figures
+reported for LLM-assisted screening in the methodological literature
+\citep{Issaiy2024}, and supports the use of LLM-assisted pre-screening as a
+complementary, time-efficient decision-support tool rather than a
+replacement for human screening.
 
 \begin{figure}[h]
   \centering
@@ -858,25 +914,20 @@ unprecedented manner around the anamnesis as the primary unit of analysis.
 
 \subsection*{Limitations of this review}
 
-This review presents four central limitations.
-First, although the electronic search was concentrated in PubMed/MEDLINE as
-the primary database, the inclusion of additional articles via
-\textit{snowballing} (including relevant systematic reviews and reference
-studies) aimed to mitigate the loss of essential articles; however, the
-absence of automated searches in other indexed electronic databases (such as
-Scopus and Web of Science) remains a limitation for full generalisation of
-the literature.
-Second, there is a language bias: the mapped literature is predominantly in
-English, with under-representation of studies conducted in the Brazilian
-health context and in Portuguese, which may underestimate local Speech
-Analytics initiatives applied to SUS.
-Third, the selection of search filters in the primary database, such as the
-requirement of free full text, may have excluded relevant studies protected
-by paywall or journal subscription restrictions.
-Fourth, the heterogeneity of study type -- including systematic reviews,
-empirical studies, preprints and conceptual models -- prevents the conduct of
-a quantitative synthesis or structured meta-analysis, also limiting direct
-comparisons of methodological quality between approaches.
+This review presents three central limitations.
+First, despite searching five electronic databases with six complementary
+strings, the heterogeneity of indexing practices across platforms means that
+some relevant studies published in grey literature, conference proceedings, or
+non-indexed journals may not have been captured. The \textit{snowballing}
+strategy was applied to partially mitigate this gap.
+Second, although the search included English, Spanish, and Portuguese, the
+mapped literature remains predominantly in English, with under-representation
+of studies conducted in the Brazilian health context, which may underestimate
+local Speech Analytics initiatives applied to SUS.
+Third, the heterogeneity of study types --- including systematic reviews,
+empirical studies, preprints, and conceptual models --- prevents quantitative
+synthesis or structured meta-analysis, limiting direct comparisons of
+methodological quality between approaches.
 
 \subsection*{Ethical considerations}
 
