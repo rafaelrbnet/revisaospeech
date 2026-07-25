@@ -21,3 +21,4 @@ __pycache__/
 # Compiled manuscript outputs (regenerate from .tex source)
 main_blind.docx
 main_blind.pdf
+artigo/*.pdf
