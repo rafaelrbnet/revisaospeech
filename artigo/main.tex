@@ -20,7 +20,9 @@
 
 \documentclass[review,12pt]{elsarticle}
 
-\usepackage[numbers,sort&compress]{natbib}
+%% NOTE: elsarticle already loads natbib in numbered mode internally;
+%% do not \usepackage{natbib} again here (causes an option clash).
+\biboptions{sort&compress}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
