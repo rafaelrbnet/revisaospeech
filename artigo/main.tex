@@ -6,17 +6,21 @@
 %%          Fabrício Evangelista dos Santos, Lucas Kenzo Terazzin Ida,
 %%          Murilo Nogueira Minutti
 %%
-%% Target journal: International Journal of Medical Informatics (IJMI)
-%% APC covered: CAPES/Elsevier Read & Publish Agreement 2026–2028
-%% Class: cas-sc.cls v2.4 (single-column — for submission/review)
+%% Target journal: Artificial Intelligence in Medicine (Elsevier)
+%% Article type: Methodological Review
+%% APC: USD 3,310 -- confirm coverage under the CAPES/Elsevier Read &
+%%      Publish Agreement 2026-2028 for this specific journal.
+%% Class: elsarticle.cls (numbered/Vancouver-style references)
+%% Peer review at AIM is single-anonymized -- see main_blind.tex for
+%% the anonymised copy required at submission.
 %%
-%% NOTE: This file is the English version for IJMI submission (branch: en-submission).
+%% NOTE: This file is the English version for AIM submission (branch: en-submission).
 %% Portuguese version for internal review is maintained on the main branch.
 %%
 
-\documentclass[a4paper,fleqn]{cas-sc}
+\documentclass[review,12pt]{elsarticle}
 
-\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -36,100 +40,55 @@
 
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 
+\journal{Artificial Intelligence in Medicine}
+
 %% ================================================================
 \begin{document}
-\let\WriteBookmarks\relax
-\def\floatpagepagefraction{1}
-\def\textpagefraction{.001}
 
-%% ----------------------------------------------------------------
-%% Running head
-%% ----------------------------------------------------------------
-\shorttitle{Speech Analytics in Clinical Communication}
-\shortauthors{R. Baena Neto et~al.}
+\begin{frontmatter}
 
 %% ----------------------------------------------------------------
 %% Title
 %% ----------------------------------------------------------------
-\title[mode=title]{Speech Analytics and Natural Language Processing
-Applied to Clinical Communication: A Scoping Review}
+\title{Speech Analytics and Natural Language Processing Applied to
+Clinical Communication: A Scoping Review}
 
 %% ----------------------------------------------------------------
 %% Authors and affiliations
-%% Affiliation [1]: Graduate Program in Health Data Science, USF
-%% Affiliation [2]: Computer Engineering, USF (undergraduate research students)
+%% [usf1]: Graduate Program in Health Data Science, USF
+%% [usf2]: Computer Engineering, USF (undergraduate research students)
 %% ----------------------------------------------------------------
-\author[1]{Rafael Baena Neto}[%
-  type=editor,
-  orcid=0009-0005-2122-4665,
-  role=Researcher
-]
-\cormark[1]
-\fnmark[1]
+\author[usf1]{Rafael Baena Neto\corref{cor1}\fnref{fn1}}
 \ead{rafael.baena@mail.usf.edu.br}
-\credit{Conceptualization, Methodology, Data curation, Formal analysis,
-        Writing -- original draft}
 
-\affiliation[1]{%
-  organization={Graduate Program in Health Data Science,
-                Universidade São Francisco (USF)},
-  addressline={Rua Alexandre Rodrigues Barbosa, 45},
-  city={Bragança Paulista},
-  postcode={12916-900},
-  state={SP},
-  country={Brazil}
-}
-
-\author[2]{Fabrício Evangelista dos Santos}[%
-  orcid=0009-0005-8163-3479
-]
-\fnmark[2]
+\author[usf2]{Fabrício Evangelista dos Santos\fnref{fn2}}
 \ead{fabricio.evangelista@mail.usf.edu.br}
-\credit{Investigation, Data curation, Methodology, Software,
-        Writing -- review \& editing}
 
-\author[2]{Lucas Kenzo Terazzin Ida}[%
-  orcid=0009-0009-2328-5022
-]
-\fnmark[3]
+\author[usf2]{Lucas Kenzo Terazzin Ida\fnref{fn3}}
 \ead{lucas.ida@mail.usf.edu.br}
-\credit{Investigation, Data curation, Formal analysis,
-        Writing -- review \& editing}
 
-\author[2]{Murilo Nogueira Minutti}[%
-  orcid=0009-0000-6411-1576
-]
-\fnmark[4]
+\author[usf2]{Murilo Nogueira Minutti\fnref{fn4}}
 \ead{murilo.minutti@mail.usf.edu.br}
-\credit{Investigation, Data curation, Formal analysis, Visualization,
-        Writing -- review \& editing}
 
-\author[1]{Vicente Idalberto Becerra Sablón}[%
-  orcid=0000-0003-3127-1906
-]
-\fnmark[5]
+\author[usf1]{Vicente Idalberto Becerra Sablón\fnref{fn5}}
 \ead{vicente.sablon@usf.edu.br}
-\credit{Supervision, Conceptualization, Writing -- review \& editing}
 
-\affiliation[2]{%
-  organization={Department of Computer Engineering,
-                Universidade São Francisco (USF)},
-  addressline={Rua Alexandre Rodrigues Barbosa, 45},
-  city={Bragança Paulista},
-  postcode={12916-900},
-  state={SP},
-  country={Brazil}
-}
+\cortext[cor1]{Corresponding author.}
+\fntext[fn1]{MSc student, Graduate Program in Health Data Science, USF.}
+\fntext[fn2]{Undergraduate research student, Computer Engineering, USF.}
+\fntext[fn3]{Undergraduate research student, Computer Engineering, USF.}
+\fntext[fn4]{Undergraduate research student, Computer Engineering, USF.}
+\fntext[fn5]{Faculty and supervisor, Graduate Program in Health Data Science, USF.}
 
-\cortext[1]{Corresponding author}
-\fntext[1]{MSc student, Graduate Program in Health Data Science, USF.}
-\fntext[2]{Undergraduate research student, Computer Engineering, USF.}
-\fntext[3]{Undergraduate research student, Computer Engineering, USF.}
-\fntext[4]{Undergraduate research student, Computer Engineering, USF.}
-\fntext[5]{Faculty and supervisor, Graduate Program in Health Data Science, USF.}
+\address[usf1]{Graduate Program in Health Data Science, Universidade
+São Francisco (USF), Rua Alexandre Rodrigues Barbosa, 45, Bragança
+Paulista, SP, 12916-900, Brazil}
+\address[usf2]{Department of Computer Engineering, Universidade São
+Francisco (USF), Rua Alexandre Rodrigues Barbosa, 45, Bragança
+Paulista, SP, 12916-900, Brazil}
 
 %% ----------------------------------------------------------------
-%% Abstract — maximum 250 words (IJMI)
+%% Abstract
 %% ----------------------------------------------------------------
 \begin{abstract}
 \textbf{Background:}
@@ -185,30 +144,18 @@ of care.
 \end{abstract}
 
 %% ----------------------------------------------------------------
-%% Research Highlights — REQUIRED in IJMI (3 items, max. 85 characters)
-%% ----------------------------------------------------------------
-\begin{highlights}
-\item BERT models lead clinical NER; WER $\approx$9\% achievable with
-      Whisper/PyAnnote pipelines
-\item Communication markers (self-repair, engagement, barriers)
-      predict therapeutic adherence
-\item Confirmed gap: clinical interactions rarely operationalised
-      as speech-derived variables
-\end{highlights}
-
-%% ----------------------------------------------------------------
 %% Keywords
 %% ----------------------------------------------------------------
-\begin{keywords}
+\begin{keyword}
 Speech analytics \sep
 Natural language processing \sep
 Clinical communication \sep
 Automatic speech recognition \sep
 Communication markers \sep
 Digital scribe
-\end{keywords}
+\end{keyword}
 
-\maketitle
+\end{frontmatter}
 
 %% ================================================================
 \section{Introduction}
@@ -588,7 +535,7 @@ S23 & Albert et al., 2024    & Scoping rev.\textsuperscript{‡} & D & AI, Speec
 S24 & Imel et al., 2022      & Report       & D & Sequential neural networks & Emotional valence; human rater agreement & USA         \\
 \midrule
 \multicolumn{7}{l}{\footnotesize\parbox{13.5cm}{%
-  \textsuperscript{‡}Preprint/not peer-reviewed (arXiv/medRxiv) --- included as they meet IC1--IC4; preprint acceptance per Elsevier/IJMI policy.}} \\
+  \textsuperscript{‡}Preprint/not peer-reviewed (arXiv/medRxiv) --- included as they meet IC1--IC4; preprint acceptance per Elsevier/AIM policy.}} \\
 \end{longtable}
 
 % ---------------------------------------------------------------
@@ -1023,7 +970,7 @@ Brazil), under the Open Access Agreement signed between the Coordination for
 the Improvement of Higher Education Personnel (CAPES) and Elsevier for the
 period 2026--2028 (\textit{Read \& Publish Agreement}).
 
-\subsection*{Conflict of interest}
+\subsection*{Declaration of competing interest}
 None of the authors has employment, consultancy, equity, honoraria, patents
 or funding ties to entities with commercial or institutional interest in the
 topic of this review.
@@ -1075,10 +1022,20 @@ All intellectual content, analyses, syntheses and conclusions are the sole
 responsibility of the authors, who fully reviewed and validated all material
 described that was produced with AI assistance.
 
-\printcredits
+\subsection*{CRediT authorship contribution statement}
+\textbf{Rafael Baena Neto:} Conceptualization, Methodology, Data curation,
+Formal analysis, Writing -- original draft.
+\textbf{Fabrício Evangelista dos Santos:} Investigation, Data curation,
+Methodology, Software, Writing -- review \& editing.
+\textbf{Lucas Kenzo Terazzin Ida:} Investigation, Data curation, Formal
+analysis, Writing -- review \& editing.
+\textbf{Murilo Nogueira Minutti:} Investigation, Data curation, Formal
+analysis, Visualization, Writing -- review \& editing.
+\textbf{Vicente Idalberto Becerra Sablón:} Supervision, Conceptualization,
+Writing -- review \& editing.
 
 %% ================================================================
-\bibliographystyle{cas-model2-names}
+\bibliographystyle{elsarticle-num}
 \bibliography{references}
 
 \end{document}

@@ -2,15 +2,16 @@
 %% Speech Analytics and Natural Language Processing Applied to
 %% Clinical Communication: A Scoping Review
 %%
-%% [Author identifiers removed for double-blind peer review]
+%% [Author identifiers removed for single-anonymized peer review]
 %%
-%% Target journal: International Journal of Medical Informatics (IJMI)
-%% Class: cas-sc.cls v2.4 (single-column — for submission/review)
+%% Target journal: Artificial Intelligence in Medicine (Elsevier)
+%% Article type: Methodological Review
+%% Class: elsarticle.cls (numbered/Vancouver-style references)
 %%
 
-\documentclass[a4paper,fleqn]{cas-sc}
+\documentclass[review,12pt]{elsarticle}
 
-\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -30,62 +31,40 @@
 
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 
+\journal{Artificial Intelligence in Medicine}
+
 %% ================================================================
 \begin{document}
-\let\WriteBookmarks\relax
-\def\floatpagepagefraction{1}
-\def\textpagefraction{.001}
 
-%% ----------------------------------------------------------------
-%% Running head
-%% ----------------------------------------------------------------
-\shorttitle{Speech Analytics in Clinical Communication}
-\shortauthors{[Authors removed for review]}
+\begin{frontmatter}
 
 %% ----------------------------------------------------------------
 %% Title
 %% ----------------------------------------------------------------
-\title[mode=title]{Speech Analytics and Natural Language Processing
-Applied to Clinical Communication: A Scoping Review}
+\title{Speech Analytics and Natural Language Processing Applied to
+Clinical Communication: A Scoping Review}
 
 %% ----------------------------------------------------------------
-%% Authors — identifiers removed for double-blind review
+%% Authors — identifiers removed for single-anonymized review
 %% ----------------------------------------------------------------
-\author[1]{Author 1}
-\cormark[1]
-\fnmark[1]
+\author[inst1]{Author 1\corref{cor1}\fnref{fn1}}
+\author[inst1]{Author 2\fnref{fn2}}
+\author[inst2]{Author 3\fnref{fn3}}
+\author[inst2]{Author 4\fnref{fn4}}
+\author[inst2]{Author 5\fnref{fn5}}
 
-\affiliation[1]{%
-  organization={[Institution 1 removed for review]},
-  country={Brazil}
-}
+\cortext[cor1]{Corresponding author.}
+\fntext[fn1]{[Role and affiliation removed for review]}
+\fntext[fn2]{[Role and affiliation removed for review]}
+\fntext[fn3]{[Role and affiliation removed for review]}
+\fntext[fn4]{[Role and affiliation removed for review]}
+\fntext[fn5]{[Role and affiliation removed for review]}
 
-\author[1]{Author 2}
-\fnmark[2]
-
-\author[2]{Author 3}
-\fnmark[3]
-
-\affiliation[2]{%
-  organization={[Institution 2 removed for review]},
-  country={Brazil}
-}
-
-\author[2]{Author 4}
-\fnmark[4]
-
-\author[2]{Author 5}
-\fnmark[5]
-
-\cortext[1]{Corresponding author}
-\fntext[1]{[Role and affiliation removed for review]}
-\fntext[2]{[Role and affiliation removed for review]}
-\fntext[3]{[Role and affiliation removed for review]}
-\fntext[4]{[Role and affiliation removed for review]}
-\fntext[5]{[Role and affiliation removed for review]}
+\address[inst1]{[Institution 1 removed for review], Brazil}
+\address[inst2]{[Institution 2 removed for review], Brazil}
 
 %% ----------------------------------------------------------------
-%% Abstract — maximum 250 words (IJMI)
+%% Abstract
 %% ----------------------------------------------------------------
 \begin{abstract}
 \textbf{Background:}
@@ -141,30 +120,18 @@ of care.
 \end{abstract}
 
 %% ----------------------------------------------------------------
-%% Research Highlights — REQUIRED in IJMI (3 items, max. 85 characters)
-%% ----------------------------------------------------------------
-\begin{highlights}
-\item BERT models lead clinical NER; WER $\approx$9\% achievable with
-      Whisper/PyAnnote pipelines
-\item Communication markers (self-repair, engagement, barriers)
-      predict therapeutic adherence
-\item Confirmed gap: clinical interactions rarely operationalised
-      as speech-derived variables
-\end{highlights}
-
-%% ----------------------------------------------------------------
 %% Keywords
 %% ----------------------------------------------------------------
-\begin{keywords}
+\begin{keyword}
 Speech analytics \sep
 Natural language processing \sep
 Clinical communication \sep
 Automatic speech recognition \sep
 Communication markers \sep
 Digital scribe
-\end{keywords}
+\end{keyword}
 
-\maketitle
+\end{frontmatter}
 
 %% ================================================================
 \section{Introduction}
@@ -542,7 +509,7 @@ S23 & Albert et al., 2024    & Scoping rev.\textsuperscript{‡} & D & AI, Speec
 S24 & Imel et al., 2022      & Report       & D & Sequential neural networks & Emotional valence; human rater agreement & USA         \\
 \midrule
 \multicolumn{7}{l}{\footnotesize\parbox{13.5cm}{%
-  \textsuperscript{‡}Preprint/not peer-reviewed (arXiv/medRxiv) --- included as they meet IC1--IC4; preprint acceptance per Elsevier/IJMI policy.}} \\
+  \textsuperscript{‡}Preprint/not peer-reviewed (arXiv/medRxiv) --- included as they meet IC1--IC4; preprint acceptance per Elsevier/AIM policy.}} \\
 \end{longtable}
 
 % ---------------------------------------------------------------
@@ -971,7 +938,7 @@ Article processing charges (APC) are waived for the corresponding author's
 institution under the Open Access Agreement signed with Elsevier for the
 period 2026--2028 (\textit{Read \& Publish Agreement}).
 
-\subsection*{Conflict of interest}
+\subsection*{Declaration of competing interest}
 None of the authors has employment, consultancy, equity, honoraria, patents
 or funding ties to entities with commercial or institutional interest in the
 topic of this review.
@@ -1018,7 +985,7 @@ responsibility of the authors, who fully reviewed and validated all material
 produced with AI assistance.
 
 %% ================================================================
-\bibliographystyle{cas-model2-names}
+\bibliographystyle{elsarticle-num}
 \bibliography{references}
 
 \end{document}
